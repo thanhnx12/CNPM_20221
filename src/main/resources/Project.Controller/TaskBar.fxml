@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="746.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.TaskBar">
+   <children>
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="32.0" layoutY="182.0" prefHeight="279.0" prefWidth="106.0" spacing="10.0" AnchorPane.leftAnchor="32.0">
+         <children>
+            <Button fx:id="TrangChu" mnemonicParsing="false" onAction="#aTrangChu" prefHeight="26.0" prefWidth="77.0" text="Trang chủ" />
+            <Button fx:id="NhanKhau" mnemonicParsing="false" onAction="#aNhanKhau" text="Nhân khẩu" />
+            <Button fx:id="HoKhau" mnemonicParsing="false" onAction="#aHoKhau" prefHeight="26.0" prefWidth="76.0" text="Hộ khẩu" />
+            <Button fx:id="QuanLyThu" mnemonicParsing="false" onAction="#aQuanLyThu" text="Quản lý thu" />
+         </children>
+      </VBox>
+      <AnchorPane fx:id="anchorPane" layoutX="167.0" layoutY="-1.0" prefHeight="762.0" prefWidth="1049.0" />
+   </children>
+</AnchorPane>

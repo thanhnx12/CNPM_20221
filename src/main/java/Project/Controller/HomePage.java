@@ -1,4 +1,4 @@
 package Project.Controller;
 
-public class main {
+public class HomePage {
 }
