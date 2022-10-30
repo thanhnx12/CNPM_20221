@@ -76,4 +76,8 @@ public class ChonNhanKhauController implements Initializable{
         tableNhanKhau.setItems(nhanKhauList);
     }
 
+    public NhanKhau getNhanKhauChon() {
+        return nhanKhauChon;
+    }
+
 }
