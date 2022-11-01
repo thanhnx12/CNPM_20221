@@ -5,14 +5,16 @@ public class DaNop {
     private int idPhi;
     private int idHoKhau;
 
-    public DaNop(int ID, int idPhi, int idHoKhau) {
+    private double soTien;
+
+    public DaNop(int ID, int idPhi, int idHoKhau, double soTien) {
         this.ID = ID;
         this.idPhi = idPhi;
         this.idHoKhau = idHoKhau;
+        this.soTien = soTien;
     }
 
     public DaNop() {
-
     }
 
     public int getID() {
@@ -37,5 +39,13 @@ public class DaNop {
 
     public void setIdHoKhau(int idHoKhau) {
         this.idHoKhau = idHoKhau;
+    }
+
+    public double getSoTien() {
+        return soTien;
+    }
+
+    public void setSoTien(double soTien) {
+        this.soTien = soTien;
     }
 }
