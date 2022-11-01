@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="762.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NhanKhauController">
    <children>
       <TableView fx:id="tableView" layoutX="16.0" layoutY="122.0" prefHeight="618.0" prefWidth="883.0">
@@ -28,7 +27,7 @@
       <Button fx:id="btnTatCa" layoutX="939.0" layoutY="137.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Tất cả" />
       <Button fx:id="btnThemMoi" layoutX="939.0" layoutY="191.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Thêm mới" />
       <Button fx:id="btnDKTamVang" layoutX="939.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="ĐK Tạm vắng" />
-      <Button fx:id="btnDK" layoutX="939.0" layoutY="303.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="ĐK Tạm trú" />
+      <Button fx:id="btnDKTamtru" layoutX="939.0" layoutY="303.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="ĐK Tạm trú" />
       <Button fx:id="btnDSTamVang" layoutX="939.0" layoutY="368.0" mnemonicParsing="false" text="DS Tạm vắng" />
       <Button fx:id="btnDSTamTru" layoutX="939.0" layoutY="419.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="DS Tạm trú" />
       <Button fx:id="btnKhaiTu" layoutX="939.0" layoutY="473.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Khai tử" />

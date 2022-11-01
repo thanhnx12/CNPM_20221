@@ -1,22 +1,18 @@
 package Project.Controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class NhanKhauController implements Initializable {
-
-    @FXML
-    private Button btnDK;
+public class NhanKhauController {
 
     @FXML
     private Button btnDKTamVang;
+
+    @FXML
+    private Button btnDKTamtru;
 
     @FXML
     private Button btnDSTamTru;
@@ -37,24 +33,18 @@ public class NhanKhauController implements Initializable {
     private TableColumn<?, ?> cDiaChi;
 
     @FXML
-    private TableColumn<NhanKhauController, String> cDienThoai;
+    private TableColumn<?, ?> cDienThoai;
 
     @FXML
-    private TableColumn<NhanKhauController, String> cHoVaTen;
+    private TableColumn<?, ?> cHoVaTen;
 
     @FXML
-    private TableColumn<NhanKhauController, Integer> cID;
+    private TableColumn<?, ?> cID;
 
     @FXML
-    private TableView<NhanKhauController> tableView;
+    private TableView<?> tableView;
 
     @FXML
     private TextField txtSearch;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
 
 }
