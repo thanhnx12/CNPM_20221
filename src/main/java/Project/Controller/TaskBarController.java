@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class TaskBar {
+public class TaskBarController {
 
     @FXML
     private Button HoKhau;
