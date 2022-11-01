@@ -21,8 +21,8 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
             String sql="INSERT INTO nhan_khau(ID,soCMT_CCCD,hoTen,ngaySinh,gioiTinh,noiSinh," +
                     "nguyenQuan,danToc,quocTich,soHoChieu,noiThuongTru," +
                     "diaChiHienTai,tonGiao,ghiChu,ngayTao,idNguoiTao," +
-                    "ngayXoa,idNguoiXoa,lyDoXoa)"
-                    +" VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "ngayXoa,idNguoiXoa,lyDoXoa,dienThoai)"
+                    +" VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getID());
             st.setInt(2,o.getSoCMT_CCCD());
@@ -43,6 +43,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
             st.setDate(17,o.getNgayXoa());
             st.setInt(18,o.getIdNguoiXoa());
             st.setString(19,o.getLyDoXoa());
+            st.setString(20,o.getDienThoai());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -61,7 +62,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
             String sql="UPDATE nhan_khau "+"SET soCMT_CCCD = ?,hoTen=?,ngaySinh=?,gioiTinh=?," +
                     "noiSinh=?,nguyenQuan=?,danToc = ?,quocTich = ?, soHoChieu = ?, noiThuongTru = ?," +
                     "diaChiHienTai = ?, tonGiao = ?, ghiChu = ?, ngayTao = ?, idNguoiXoa = ?, ngayXoa = ?, " +
-                    "idNguoiXoa = ?, lyDoXoa = ?" +
+                    "idNguoiXoa = ?, lyDoXoa = ?,dienThoai = ?" +
                     "WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getSoCMT_CCCD());
@@ -82,7 +83,8 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
             st.setDate(16,o.getNgayXoa());
             st.setInt(17,o.getIdNguoiXoa());
             st.setString(18,o.getLyDoXoa());
-            st.setInt(19,o.getID());
+            st.setString(19,o.getDienThoai());
+            st.setInt(20,o.getID());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -139,6 +141,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
                 o.setNgayXoa(rs.getDate("ngayXoa"));
                 o.setIdNguoiXoa(rs.getInt("idNguoiXoa"));
                 o.setLyDoXoa(rs.getString("lyDoXoa"));
+                o.setDienThoai(rs.getString("dienThoai"));
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);

@@ -21,8 +21,9 @@ public class NhanKhau {
     private Date ngayXoa;
     private int idNguoiXoa;
     private String lyDoXoa;
+    private String dienThoai;
 
-    public NhanKhau(int ID, int soCMT_CCCD, String hoTen, Date ngaySinh, String gioiTinh, String noiSinh, String nguyenQuan, String danToc, String quocTich, String soHoChieu, String noiThuongTru, String diaChiHienTai, String tonGiao, String ghiChu, Date ngayTao, int idNguoiTao, Date ngayXoa, int idNguoiXoa, String lyDoXoa) {
+    public NhanKhau(int ID, int soCMT_CCCD, String hoTen, Date ngaySinh, String gioiTinh, String noiSinh, String nguyenQuan, String danToc, String quocTich, String soHoChieu, String noiThuongTru, String diaChiHienTai, String tonGiao, String ghiChu, Date ngayTao, int idNguoiTao, Date ngayXoa, int idNguoiXoa, String lyDoXoa, String dienThoai) {
         this.ID = ID;
         this.soCMT_CCCD = soCMT_CCCD;
         this.hoTen = hoTen;
@@ -42,6 +43,15 @@ public class NhanKhau {
         this.ngayXoa = ngayXoa;
         this.idNguoiXoa = idNguoiXoa;
         this.lyDoXoa = lyDoXoa;
+        this.dienThoai = dienThoai;
+    }
+
+    public String getDienThoai() {
+        return dienThoai;
+    }
+
+    public void setDienThoai(String dienThoai) {
+        this.dienThoai = dienThoai;
     }
 
     public NhanKhau() {

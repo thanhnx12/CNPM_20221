@@ -42,6 +42,7 @@ CREATE TABLE `nhan_khau` (
   `ngayXoa` date DEFAULT NULL,
   `idNguoiXoa` int DEFAULT NULL,
   `lyDoXoa` varchar(100) DEFAULT NULL,
+  `dienThoai` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `idNguoiTao` (`idNguoiTao`,`idNguoiXoa`),
   KEY `idNguoiXoa` (`idNguoiXoa`),
@@ -56,7 +57,7 @@ CREATE TABLE `nhan_khau` (
 
 LOCK TABLES `nhan_khau` WRITE;
 /*!40000 ALTER TABLE `nhan_khau` DISABLE KEYS */;
-INSERT INTO `nhan_khau` VALUES (1,12345,'Ngoc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf'),(2,12345,'Thanh','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf'),(3,12345,'Nam','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf'),(4,12345,'Hai','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf'),(5,12345,'Duc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf');
+INSERT INTO `nhan_khau` VALUES (1,12345,'Ngoc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(2,12345,'Thanh','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(3,12345,'Nam','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(4,12345,'Hai','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(5,12345,'Duc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL);
 /*!40000 ALTER TABLE `nhan_khau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -69,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 10:15:54
+-- Dump completed on 2022-11-01 10:44:18
