@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="515.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.DKTamVang">
+   <children>
+      <TextField fx:id="txtCCCD" layoutX="197.0" layoutY="54.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextField fx:id="txtMaGiay" layoutX="198.0" layoutY="111.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextField fx:id="txtTuNgay" layoutX="198.0" layoutY="169.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextField fx:id="txtDenNgay" layoutX="198.0" layoutY="232.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextArea fx:id="txtLyDo" layoutX="197.0" layoutY="301.0" prefHeight="200.0" prefWidth="337.0" />
+      <Text layoutX="59.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="58.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Giấy Tạm Vắng">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="58.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="59.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="62.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -17,12 +17,13 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="INSERT INTO da_nop(ID,idPhi,idHoKhau)"
+            String sql="INSERT INTO da_nop(ID,idPhi,idHoKhau,soTien)"
                     +" VALUES(?,?,?)";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getID());
             st.setInt(2,o.getIdPhi());
             st.setInt(3,o.getIdHoKhau());
+            st.setDouble(4,o.getSoTien());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -38,12 +39,13 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?"
+            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ?"
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdPhi());
             st.setInt(2,o.getIdHoKhau());
-            st.setInt(3,o.getID());
+            st.setDouble(3,o.getSoTien());
+            st.setInt(4,o.getID());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -85,6 +87,7 @@ public class DaNopDAO implements DAO<DaNop>{
                 o.setID(rs.getInt("ID"));
                 o.setIdHoKhau(rs.getInt("idHoKhau"));
                 o.setIdPhi(rs.getInt("idPhi"));
+                o.setSoTien(rs.getDouble("soTien"));
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);
