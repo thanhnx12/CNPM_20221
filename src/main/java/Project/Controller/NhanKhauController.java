@@ -121,6 +121,7 @@ public class NhanKhauController implements Initializable {
         stage1.showAndWait();
         TamTru tamTru = controller.getTamTru();
         System.out.println(tamTru.getLyDo());
+        System.out.println(tamTru.getDenNgay());
 
     }
 

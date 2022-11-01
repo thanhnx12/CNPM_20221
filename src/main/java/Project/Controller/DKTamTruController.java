@@ -1,5 +1,7 @@
 
 package Project.Controller;
+import Project.Manager.NhanKhauManager;
+import Project.Manager.TamTruManager;
 import Project.Model.TamTru;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,27 +56,22 @@ public class DKTamTruController implements Initializable {
 
     }
 
-    @FXML
-    void actXacNhan(ActionEvent event) {
 
-    }
 
     @FXML
     public  void actXacNhan(ActionEvent event){
         tamTru.setMaGiayTamTru(txtMaGiay.getText());
         tamTru.setNoiTamTru(txtNoiTamTru.getText());
-        tamTru.setTuNgay(dateTuNgay.get);
-        tamTru.setDenNgay(java.sql.Date.valueOf(txtDenNgay.getText()));
+        //System.out.println(dateTuNgay.getValue());
+        tamTru.setTuNgay(java.sql.Date.valueOf(dateTuNgay.getValue()));
+        tamTru.setDenNgay(java.sql.Date.valueOf(dateDenNgay.getValue()));
+        //tamTru.setDenNgay(java.sql.Date.valueOf(txtDenNgay.getText()));
         tamTru.setLyDo(txtLyDo.getText());
         tamTru.setID(TamTruManager.List.size() + 1);
         tamTru.setIdNhanKhau(NhanKhauManager.nhanKhauList.size() + 1);
 
         Stage stage = (Stage) btnXacNhan.getScene().getWindow();
         stage.close();
-
-    }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
     }
 
