@@ -6,17 +6,15 @@ public class TamTru {
     private int ID;
     private int idNhanKhau;
     private String maGiayTamTru;
-    private String GiayTamTru;
     private String noiTamTru;
     private Date tuNgay;
     private Date denNgay;
     private String lyDo;
 
-    public TamTru(int ID, int idNhanKhau, String maGiayTamTru, String giayTamTru, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
+    public TamTru(int ID, int idNhanKhau, String maGiayTamTru, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
         this.ID = ID;
         this.idNhanKhau = idNhanKhau;
         this.maGiayTamTru = maGiayTamTru;
-        GiayTamTru = giayTamTru;
         this.noiTamTru = noiTamTru;
         this.tuNgay = tuNgay;
         this.denNgay = denNgay;
@@ -57,14 +55,6 @@ public class TamTru {
 
     public void setMaGiayTamTru(String maGiayTamTru) {
         this.maGiayTamTru = maGiayTamTru;
-    }
-
-    public String getGiayTamTru() {
-        return GiayTamTru;
-    }
-
-    public void setGiayTamTru(String giayTamTru) {
-        GiayTamTru = giayTamTru;
     }
 
     public String getNoiTamTru() {

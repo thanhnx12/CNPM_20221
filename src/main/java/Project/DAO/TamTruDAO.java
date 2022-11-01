@@ -22,7 +22,7 @@ public class TamTruDAO implements DAO<TamTru>{
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getID());
             st.setInt(2,o.getIdNhanKhau());
-            st.setString(3,o.getGiayTamTru());
+            st.setString(3,o.getMaGiayTamTru());
             st.setString(4,o.getNoiTamTru());
             st.setDate(5,o.getTuNgay());
             st.setDate(6,o.getDenNgay());
@@ -42,7 +42,7 @@ public class TamTruDAO implements DAO<TamTru>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE tam_tru "+"SET idNhanKhau = ?, maGiayTamVang = ?,noiTamTru = ? ,tuNgay = ?, denNgay = ?, lyDo = ?"
+            String sql="UPDATE tam_tru "+"SET idNhanKhau = ?, maGiayTamTru = ?,noiTamTru = ? ,tuNgay = ?, denNgay = ?, lyDo = ?"
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdNhanKhau());
@@ -92,7 +92,7 @@ public class TamTruDAO implements DAO<TamTru>{
                 TamTru o=new TamTru();
                 o.setID(rs.getInt("id"));
                 o.setIdNhanKhau(rs.getInt("idNhanKhau"));
-                o.setGiayTamTru(rs.getString("maGiayTamVang"));
+                o.setMaGiayTamTru(rs.getString("maGiayTamTru"));
                 o.setNoiTamTru(rs.getString("noiTamTru"));
                 o.setTuNgay(rs.getDate("tuNgay"));
                 o.setDenNgay(rs.getDate("denNgay"));

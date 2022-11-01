@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="599.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.DKTamTruController">
+<AnchorPane prefHeight="637.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.DKTamTruController">
    <children>
       <TextField fx:id="txtCCCD" layoutX="197.0" layoutY="54.0" prefHeight="26.0" prefWidth="327.0" />
       <TextField fx:id="txtMaGiay" layoutX="198.0" layoutY="111.0" prefHeight="26.0" prefWidth="327.0" />
-      <TextField fx:id="txtTuNgay" layoutX="198.0" layoutY="220.0" prefHeight="26.0" prefWidth="327.0" />
-      <TextField fx:id="txtDenNgay" layoutX="198.0" layoutY="283.0" prefHeight="26.0" prefWidth="327.0" />
       <TextArea fx:id="txtLyDo" layoutX="197.0" layoutY="352.0" prefHeight="200.0" prefWidth="337.0" />
       <Text layoutX="59.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
          <font>
@@ -39,10 +39,14 @@
          </font>
       </Text>
       <TextField fx:id="txtNoiTamTru" layoutX="197.0" layoutY="167.0" prefHeight="26.0" prefWidth="327.0" />
+      <Button fx:id="btnXacNhan" layoutX="197.0" layoutY="581.0" mnemonicParsing="false" onAction="#actXacNhan" text="Xác nhận" />
       <Text layoutX="58.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi Tạm Trú">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
+      <Button fx:id="btnHuy" layoutX="485.0" layoutY="581.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="26.0" prefWidth="49.0" text="Hủy" />
+      <DatePicker fx:id="dateTuNgay" layoutX="198.0" layoutY="219.0" onAction="#actTuNgay" />
+      <DatePicker fx:id="dateDenNgay" layoutX="198.0" layoutY="282.0" onAction="#actDenNgay" />
    </children>
 </AnchorPane>

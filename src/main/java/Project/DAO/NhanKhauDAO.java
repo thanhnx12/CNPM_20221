@@ -142,6 +142,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
                 o.setIdNguoiXoa(rs.getInt("idNguoiXoa"));
                 o.setLyDoXoa(rs.getString("lyDoXoa"));
                 o.setDienThoai(rs.getString("dienThoai"));
+                o.setDiaChiHienTai(rs.getString("diaChiHienTai"));
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);
@@ -151,13 +152,10 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
         return ans;
     }
 
-//    public static void main(String[] args) {
-//        NhanKhau a = new NhanKhau(5,12345,"Duc",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
-//                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" );
-//        NhanKhauDAO b = new NhanKhauDAO();
-//        ArrayList<NhanKhau> arr = b.selectAll();
-//        for(NhanKhau x : arr){
-//            System.out.println(x.getHoTen());
-//        }
-//    }
+    public static void main(String[] args) {
+        NhanKhau a = new NhanKhau(7,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
+                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" ,"09999");
+        NhanKhauDAO b = new NhanKhauDAO();
+        b.insert(a);
+    }
 }
