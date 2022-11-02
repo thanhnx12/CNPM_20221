@@ -42,7 +42,7 @@ public class KhaiTuDAO implements DAO<KhaiTu> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE khai_tu "+"SET soGiayKhaiTu = ?, idNguoiKhai = ?,idNguoiChet = ? ,ngayKhai = ?, ngayChet = ?, lyDoChet = ?"
+            String sql="UPDATE khai_tu "+"SET soGiayKhaiTu = ?, idNguoiKhai = ?,idNguoiChet = ? ,ngayKhai = ?, ngayChet = ?, lyDoChet = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getSoGiayKhaiTu());

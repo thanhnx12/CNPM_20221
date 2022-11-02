@@ -5,6 +5,7 @@ import Project.DAO.TamTruDAO;
 import Project.Manager.NhanKhauManager;
 import Project.Manager.TamTruManager;
 import Project.Model.NhanKhau;
+import Project.Model.Users;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import java.net.URL;
 
 
 public class Main extends Application {
+    public static Users user = new Users(); // Người đang sử dụng hệ thống
     @Override
     public void start(Stage primaryStage) {
         try{

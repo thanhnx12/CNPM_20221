@@ -43,7 +43,7 @@ public class TamTruDAO implements DAO<TamTru>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE tam_tru "+"SET idNhanKhau = ?, maGiayTamTru = ?,noiTamTru = ? ,tuNgay = ?, denNgay = ?, lyDo = ?,hoTen = ?"
+            String sql="UPDATE tam_tru "+"SET idNhanKhau = ?, maGiayTamTru = ?,noiTamTru = ? ,tuNgay = ?, denNgay = ?, lyDo = ?,hoTen = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdNhanKhau());

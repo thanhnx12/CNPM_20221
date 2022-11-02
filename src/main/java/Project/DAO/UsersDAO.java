@@ -38,7 +38,7 @@ public class UsersDAO implements DAO<Users>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE users "+"SET username = ?,password = ?"
+            String sql="UPDATE users "+"SET username = ?,password = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getUserName());

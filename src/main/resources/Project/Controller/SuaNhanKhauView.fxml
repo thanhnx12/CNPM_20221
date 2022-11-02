@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.ThemNhanKhauController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.SuaNhanKhauController">
    <children>
-      <Text layoutX="355.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm nhân khẩu" textAlignment="CENTER">
+      <Text layoutX="286.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sửa thông tin nhân khẩu" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
@@ -92,8 +92,8 @@
          </font>
       </Text>
       <TextArea fx:id="ghiChu" layoutX="186.0" layoutY="428.0" prefHeight="72.0" prefWidth="200.0" />
-      <Button fx:id="huy" layoutX="451.0" layoutY="442.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="42.0" prefWidth="135.0" text="Hủy" />
-      <Button layoutX="701.0" layoutY="442.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="42.0" prefWidth="135.0" text="Xác nhận" fx:id="xacNhan" />
+      <Button fx:id="huy" layoutX="720.0" layoutY="558.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="42.0" prefWidth="135.0" text="Hủy" />
+      <Button layoutX="384.0" layoutY="558.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="42.0" prefWidth="135.0" text="Xác nhận" fx:id="xacNhan" />
       <TextField fx:id="dienThoai" layoutX="571.0" layoutY="311.0" />
       <Text layoutX="434.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại">
          <font>
@@ -101,5 +101,6 @@
          </font>
       </Text>
       <DatePicker fx:id="dateNgaySinh" layoutX="187.0" layoutY="137.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button fx:id="btnXoaNhanKhau" layoutX="94.0" layoutY="558.0" mnemonicParsing="false" onAction="#actXoaNhanKhau" prefHeight="42.0" prefWidth="149.0" text="Xóa nhân khẩu" />
    </children>
 </Pane>

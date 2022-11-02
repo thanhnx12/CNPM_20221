@@ -38,7 +38,7 @@ public class PhiDAO implements DAO<Phi>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE phi "+"SET tenLoaiPhi = ?,tuNguyen = ?"
+            String sql="UPDATE phi "+"SET tenLoaiPhi = ?,tuNguyen = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getTenLoaiPhi());

@@ -5,15 +5,19 @@ import Project.Manager.NhanKhauManager;
 import Project.Model.NhanKhau;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.net.URL;
+import java.time.LocalDate;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class ThemNhanKhauController {
+public class SuaNhanKhauController implements Initializable {
 
     @FXML
-    private TextField bietDanh;
+    private Button btnXoaNhanKhau;
 
     @FXML
     private TextField danToc;
@@ -62,19 +66,17 @@ public class ThemNhanKhauController {
 
     @FXML
     private Button xacNhan;
-    NhanKhau nhanKhau = new NhanKhau();
 
     @FXML
     void actHuy(ActionEvent event) {
         Stage stage = (Stage) huy.getScene().getWindow();
         stage.close();
     }
-
+    NhanKhau nhanKhau = new NhanKhau();
     @FXML
     void actXacNhan(ActionEvent event) {
         if(checkValid()){
             nhanKhau.setIdNguoiTao(Main.user.getID());
-            nhanKhau.setID(DataAccess.nhanKhauDAO.getNewID());
             nhanKhau.setHoTen(hoVaTen.getText());
             nhanKhau.setGhiChu(ghiChu.getText());
             nhanKhau.setDienThoai(dienThoai.getText());
@@ -90,9 +92,15 @@ public class ThemNhanKhauController {
             nhanKhau.setNoiSinh(noiSinh.getText());
             nhanKhau.setNgaySinh(java.sql.Date.valueOf(dateNgaySinh.getValue()));
             nhanKhau.setDanToc(danToc.getText());
-
-            DataAccess.nhanKhauDAO.insert(nhanKhau);
-            NhanKhauManager.nhanKhauList.add(nhanKhau);
+            nhanKhau.setID(NhanKhauController.nhanKhauClick.getID());
+            DataAccess.nhanKhauDAO.update(nhanKhau);
+            for(NhanKhau x : NhanKhauManager.nhanKhauList){
+                if(x.getID() == nhanKhau.getID()) {
+                    NhanKhauManager.nhanKhauList.remove(x);
+                    NhanKhauManager.nhanKhauList.add(nhanKhau);
+                    break;
+                }
+            }
 
             Stage stage = (Stage) xacNhan.getScene().getWindow();
             stage.close();
@@ -107,7 +115,41 @@ public class ThemNhanKhauController {
                 alert.close();
             }
         }
+
     }
+
+    @FXML
+    void actXoaNhanKhau(ActionEvent event) {
+
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa nhân khẩu");
+        alert.setHeaderText("Bạn có chắc chắn muốn xóa ?");
+//        alert.setContentText("C:/MyFile.txt");
+
+        // option != null.
+        Optional<ButtonType> option = alert.showAndWait();
+
+        if (option.get() == null) {
+
+        } else if (option.get() == ButtonType.OK) {
+            for(NhanKhau x : NhanKhauManager.nhanKhauList){
+                if(x.getID() == NhanKhauController.nhanKhauClick.getID()){
+                    x.setGhiChu("Đã xóa !");
+                    DataAccess.nhanKhauDAO.update(x);
+                    break;
+                }
+            }
+            alert.close();
+            Stage stage = (Stage) huy.getScene().getWindow();
+            stage.close();
+        } else if (option.get() == ButtonType.CANCEL) {
+            alert.close();
+        } else {
+            alert.close();
+        }
+    }
+
 
     @FXML
     void txtNoiSinh(ActionEvent event) {
@@ -137,6 +179,34 @@ public class ThemNhanKhauController {
         }else{
             return true;
         }
+
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        NhanKhau a = new NhanKhau();
+        a = NhanKhauController.nhanKhauClick;
+        try{
+            hoVaTen.setText(a.getHoTen() + "");
+            if(a.getNgaySinh() != null){
+                dateNgaySinh.setValue(a.getNgaySinh().toLocalDate());
+            }
+            danToc.setText(a.getDanToc() + "");
+            nguyenQuan.setText(a.getNguyenQuan() + "");
+            soCMT_CCCD.setText(a.getSoCMT_CCCD() + "");
+            noiThuongTru.setText(a.getNoiThuongTru() + "");
+            noiSinh.setText(a.getNoiSinh() + "");
+            ghiChu.setText(a.getGhiChu()+ "");
+            gioiTinh.setText(a.getGioiTinh() + "");
+            tonGiao.setText(a.getTonGiao() + "");
+            quocTich.setText(a.getQuocTich() + "");
+            hoChieuSo.setText(a.getSoHoChieu() + "");
+            diaChiHienTai.setText(a.getDiaChiHienTai() + "");
+            dienThoai.setText(a.getDienThoai() + "");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
 
     }
 }

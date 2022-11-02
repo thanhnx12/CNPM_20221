@@ -57,7 +57,7 @@ CREATE TABLE `nhan_khau` (
 
 LOCK TABLES `nhan_khau` WRITE;
 /*!40000 ALTER TABLE `nhan_khau` DISABLE KEYS */;
-INSERT INTO `nhan_khau` VALUES (1,12345,'Ngoc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(2,12345,'Thanh','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(3,12345,'Nam','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(4,12345,'Hai','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(5,12345,'Duc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(6,12345,'Doremon','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf','088888'),(7,12345,'asdfawe','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf','09999'),(8,12345,'asdfawe','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf','09999'),(9,0,'mlmlmlmlml',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'popo',NULL,'Tạm trú',NULL,1,NULL,1,NULL,'0999999'),(10,0,'LUU',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'adsgfadg',NULL,'Tạm trú',NULL,1,NULL,1,NULL,'099999'),(11,0,'Luu',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'hljlgl',NULL,'Tạm trú',NULL,1,NULL,1,NULL,'01651');
+INSERT INTO `nhan_khau` VALUES (1,132123,'Ngoc','2022-11-15','Nữ','ăefawef','hahaah','ahahah','ádf','1231','àdadsf','ádf','ádf','gay','2022-11-02',1,NULL,1,NULL,'06515'),(2,0,'gà',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ababab',NULL,'Tam tru',NULL,1,NULL,1,NULL,'029595'),(3,123123,'Thanh','2022-11-15','awef','awfeawef','awefawef','awefawef','awef','123','afwefawe','awef','awef','Tam vang','2022-11-02',1,NULL,1,NULL,'891');
 /*!40000 ALTER TABLE `nhan_khau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 11:28:37
+-- Dump completed on 2022-11-02 21:12:53

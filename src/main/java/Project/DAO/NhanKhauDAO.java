@@ -59,11 +59,11 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE nhan_khau "+"SET soCMT_CCCD = ?,hoTen=?,ngaySinh=?,gioiTinh=?," +
-                    "noiSinh=?,nguyenQuan=?,danToc = ?,quocTich = ?, soHoChieu = ?, noiThuongTru = ?," +
-                    "diaChiHienTai = ?, tonGiao = ?, ghiChu = ?, ngayTao = ?, idNguoiXoa = ?, ngayXoa = ?, " +
-                    "idNguoiXoa = ?, lyDoXoa = ?,dienThoai = ?" +
-                    "WHERE ID = ?";
+            String sql="UPDATE nhan_khau "+"SET soCMT_CCCD = ? , hoTen = ? , ngaySinh = ? , gioiTinh=? , " +
+                    "noiSinh = ? , nguyenQuan = ? , danToc = ? , quocTich = ? , soHoChieu = ? , noiThuongTru = ? , " +
+                    "diaChiHienTai = ? , tonGiao = ? , ghiChu = ?, ngayTao = ? , idNguoiXoa = ?, ngayXoa = ?, " +
+                    "idNguoiXoa = ? , lyDoXoa = ? , dienThoai = ? " +
+                    "WHERE id = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getSoCMT_CCCD());
             st.setString(2,o.getHoTen());
@@ -169,10 +169,10 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
         return ans;
     }
 
-    public static void main(String[] args) {
-        NhanKhau a = new NhanKhau(8,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
-                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" ,"09999");
-        NhanKhauDAO b = new NhanKhauDAO();
-        b.insert(a);
-    }
+//    public static void main(String[] args) {
+//        NhanKhau a = new NhanKhau(8,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
+//                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" ,"09999");
+//        NhanKhauDAO b = new NhanKhauDAO();
+//        b.insert(a);
+//    }
 }

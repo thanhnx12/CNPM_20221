@@ -38,7 +38,7 @@ public class ThanhVienDAO implements DAO<ThanhVien>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE thanh_vien_cua_ho "+"SET idHoKhau = ?,quanHeVoiChuHo = ?"
+            String sql="UPDATE thanh_vien_cua_ho "+"SET idHoKhau = ?,quanHeVoiChuHo = ? "
                     +"WHERE idNhanKhau = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdHoKhau());
