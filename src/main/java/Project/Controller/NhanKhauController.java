@@ -79,6 +79,7 @@ public class NhanKhauController implements Initializable {
         cDienThoai.setCellValueFactory(new PropertyValueFactory<>("dienThoai"));
         cID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         cHoVaTen.setCellValueFactory(new PropertyValueFactory<>("hoTen"));
+        cGhiChu.setCellValueFactory(new PropertyValueFactory<>("ghiChu"));
     }
     public void readDataFromDB() throws SQLException{
         data = FXCollections.observableArrayList();

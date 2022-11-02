@@ -16,35 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `khai_tu`
+-- Table structure for table `ho_khau`
 --
 
-DROP TABLE IF EXISTS `khai_tu`;
+DROP TABLE IF EXISTS `ho_khau`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `khai_tu` (
+CREATE TABLE `ho_khau` (
   `id` int NOT NULL,
-  `soGiayKhaiTu` int NOT NULL,
-  `idNguoiKhai` int NOT NULL,
-  `idNguoiChet` int NOT NULL,
-  `ngayKhai` date NOT NULL,
-  `ngayChet` date NOT NULL,
-  `lyDoChet` varchar(100) NOT NULL,
+  `maHoKhau` varchar(100) NOT NULL,
+  `idChuHo` int NOT NULL,
+  `maKhuVuc` varchar(100) NOT NULL,
+  `diaChi` varchar(100) NOT NULL,
+  `ngayLap` date NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `idNguoiKhai` (`idNguoiKhai`,`idNguoiChet`),
-  KEY `idNguoiChet` (`idNguoiChet`),
-  CONSTRAINT `khai_tu_ibfk_1` FOREIGN KEY (`idNguoiKhai`) REFERENCES `nhan_khau` (`ID`),
-  CONSTRAINT `khai_tu_ibfk_2` FOREIGN KEY (`idNguoiChet`) REFERENCES `nhan_khau` (`ID`)
+  KEY `idChuHo` (`idChuHo`),
+  CONSTRAINT `ho_khau_ibfk_1` FOREIGN KEY (`idChuHo`) REFERENCES `nhan_khau` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `khai_tu`
+-- Dumping data for table `ho_khau`
 --
 
-LOCK TABLES `khai_tu` WRITE;
-/*!40000 ALTER TABLE `khai_tu` DISABLE KEYS */;
-/*!40000 ALTER TABLE `khai_tu` ENABLE KEYS */;
+LOCK TABLES `ho_khau` WRITE;
+/*!40000 ALTER TABLE `ho_khau` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ho_khau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 11:28:37
+-- Dump completed on 2022-11-02 11:44:32
