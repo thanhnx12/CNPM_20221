@@ -110,7 +110,7 @@ public class NhanKhauController implements Initializable {
     }
 
     @FXML
-    void actDKTamTru(ActionEvent event) throws IOException {
+    void actDKTamTru(ActionEvent event) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("DKTamTruView.fxml"));
         Parent parent = fxmlLoader.load();
         Project.Controller.DKTamTruController controller = (Project.Controller.DKTamTruController) fxmlLoader.getController();
@@ -119,9 +119,7 @@ public class NhanKhauController implements Initializable {
         stage1.setTitle("Đăng ký tạm trú");
         stage1.setScene(scene1);
         stage1.showAndWait();
-        TamTru tamTru = controller.getTamTru();
-        System.out.println(tamTru.getLyDo());
-        System.out.println(tamTru.getDenNgay());
+        readDataFromDB();
 
     }
 

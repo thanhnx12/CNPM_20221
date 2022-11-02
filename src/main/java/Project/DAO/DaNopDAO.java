@@ -75,6 +75,23 @@ public class DaNopDAO implements DAO<DaNop>{
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM da_nop";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<DaNop> selectAll() {
         ArrayList<DaNop> ans=new ArrayList<>();
         try{

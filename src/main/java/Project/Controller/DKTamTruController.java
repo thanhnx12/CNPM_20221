@@ -1,7 +1,9 @@
 
 package Project.Controller;
+import Project.DAO.DataAccess;
 import Project.Manager.NhanKhauManager;
 import Project.Manager.TamTruManager;
+import Project.Model.NhanKhau;
 import Project.Model.TamTru;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +35,12 @@ public class DKTamTruController implements Initializable {
     private TextField txtCCCD;
 
     @FXML
+    private TextField DienThoai;
+
+    @FXML
+    private TextField txtHoTen;
+
+    @FXML
     private TextArea txtLyDo;
 
     @FXML
@@ -40,7 +48,9 @@ public class DKTamTruController implements Initializable {
 
     @FXML
     private TextField txtNoiTamTru;
+
     TamTru tamTru = new TamTru();
+    NhanKhau nhanKhau = new NhanKhau();
     @FXML
     void actDenNgay(ActionEvent event) {
 
@@ -62,19 +72,34 @@ public class DKTamTruController implements Initializable {
     public  void actXacNhan(ActionEvent event){
         tamTru.setMaGiayTamTru(txtMaGiay.getText());
         tamTru.setNoiTamTru(txtNoiTamTru.getText());
-        //System.out.println(dateTuNgay.getValue());
         tamTru.setTuNgay(java.sql.Date.valueOf(dateTuNgay.getValue()));
         tamTru.setDenNgay(java.sql.Date.valueOf(dateDenNgay.getValue()));
-        //tamTru.setDenNgay(java.sql.Date.valueOf(txtDenNgay.getText()));
         tamTru.setLyDo(txtLyDo.getText());
-        tamTru.setID(TamTruManager.List.size() + 1);
-        tamTru.setIdNhanKhau(NhanKhauManager.nhanKhauList.size() + 1);
+        tamTru.setID(DataAccess.tamTruDAO.getNewID());
+        tamTru.setIdNhanKhau(DataAccess.nhanKhauDAO.getNewID());
+        tamTru.setHoTen(txtHoTen.getText());
+        TamTruManager.List.add(tamTru);
+
+
+        nhanKhau.setDiaChiHienTai(txtNoiTamTru.getText());
+        nhanKhau.setHoTen(txtHoTen.getText());
+        nhanKhau.setDienThoai(DienThoai.getText());
+        nhanKhau.setID(tamTru.getIdNhanKhau());
+        nhanKhau.setGhiChu("Tạm trú");
+        NhanKhauManager.nhanKhauList.add(nhanKhau);
+        DataAccess.nhanKhauDAO.insert(nhanKhau);
+        DataAccess.tamTruDAO.insert(tamTru);
 
         Stage stage = (Stage) btnXacNhan.getScene().getWindow();
         stage.close();
 
     }
-
+    boolean checkValid(){
+        /**
+         * check du lieu nhap vao
+         */
+        return true;
+    }
     public TamTru getTamTru(){
         return tamTru;
     }

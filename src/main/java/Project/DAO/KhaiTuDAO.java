@@ -81,6 +81,23 @@ public class KhaiTuDAO implements DAO<KhaiTu> {
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM khai_tu";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<KhaiTu> selectAll() {
         ArrayList<KhaiTu> ans=new ArrayList<>();
         try{
