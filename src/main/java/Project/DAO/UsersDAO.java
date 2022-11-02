@@ -73,6 +73,23 @@ public class UsersDAO implements DAO<Users>{
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM users";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<Users> selectAll() {
         ArrayList<Users> ans=new ArrayList<>();
         try{

@@ -3,6 +3,7 @@ package Project.Model;
 import java.sql.Date;
 
 public class TamTru {
+    private String hoTen;
     private int ID;
     private int idNhanKhau;
     private String maGiayTamTru;
@@ -10,6 +11,25 @@ public class TamTru {
     private Date tuNgay;
     private Date denNgay;
     private String lyDo;
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public TamTru(String hoTen, int ID, int idNhanKhau, String maGiayTamTru, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
+        this.hoTen = hoTen;
+        this.ID = ID;
+        this.idNhanKhau = idNhanKhau;
+        this.maGiayTamTru = maGiayTamTru;
+        this.noiTamTru = noiTamTru;
+        this.tuNgay = tuNgay;
+        this.denNgay = denNgay;
+        this.lyDo = lyDo;
+    }
 
     public TamTru(int ID, int idNhanKhau, String maGiayTamTru, String noiTamTru, Date tuNgay, Date denNgay, String lyDo) {
         this.ID = ID;

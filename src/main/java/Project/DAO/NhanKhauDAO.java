@@ -114,6 +114,23 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM nhan_khau";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<NhanKhau> selectAll() {
         ArrayList<NhanKhau> ans=new ArrayList<>();
         try{
@@ -153,7 +170,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
     }
 
     public static void main(String[] args) {
-        NhanKhau a = new NhanKhau(7,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
+        NhanKhau a = new NhanKhau(8,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
                 "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" ,"09999");
         NhanKhauDAO b = new NhanKhauDAO();
         b.insert(a);

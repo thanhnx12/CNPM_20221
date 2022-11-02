@@ -55,7 +55,10 @@ public class NhanKhau {
     }
 
     public NhanKhau() {
-
+        this.setGhiChu(" ");
+        this.setDienThoai(" ");
+        this.setIdNguoiXoa(1);
+        this.setIdNguoiTao(1);
     }
 
     public String getLyDoXoa() {

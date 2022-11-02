@@ -8,45 +8,53 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="637.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.DKTamTruController">
+<AnchorPane fx:id="txtDienThoai" prefHeight="680.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.DKTamTruController">
    <children>
-      <TextField fx:id="txtCCCD" layoutX="197.0" layoutY="54.0" prefHeight="26.0" prefWidth="327.0" />
-      <TextField fx:id="txtMaGiay" layoutX="198.0" layoutY="111.0" prefHeight="26.0" prefWidth="327.0" />
-      <TextArea fx:id="txtLyDo" layoutX="197.0" layoutY="352.0" prefHeight="200.0" prefWidth="337.0" />
-      <Text layoutX="59.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
+      <TextField fx:id="txtCCCD" layoutX="194.0" layoutY="93.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextField fx:id="txtMaGiay" layoutX="195.0" layoutY="149.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextArea fx:id="txtLyDo" layoutX="195.0" layoutY="449.0" prefHeight="142.0" prefWidth="327.0" />
+      <Text layoutX="56.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="58.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Giấy Tạm Trú">
+      <Text layoutX="55.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Giấy Tạm Trú">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="58.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày">
+      <Text layoutX="55.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="59.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày">
+      <Text layoutX="56.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="62.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do">
+      <Text layoutX="59.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtNoiTamTru" layoutX="197.0" layoutY="167.0" prefHeight="26.0" prefWidth="327.0" />
-      <Button fx:id="btnXacNhan" layoutX="197.0" layoutY="581.0" mnemonicParsing="false" onAction="#actXacNhan" text="Xác nhận" />
-      <Text layoutX="58.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi Tạm Trú">
+      <TextField fx:id="txtNoiTamTru" layoutX="194.0" layoutY="205.0" prefHeight="26.0" prefWidth="327.0" />
+      <Button fx:id="btnXacNhan" layoutX="194.0" layoutY="619.0" mnemonicParsing="false" onAction="#actXacNhan" text="Xác nhận" />
+      <Text layoutX="55.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi Tạm Trú">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="btnHuy" layoutX="485.0" layoutY="581.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="26.0" prefWidth="49.0" text="Hủy" />
-      <DatePicker fx:id="dateTuNgay" layoutX="198.0" layoutY="219.0" onAction="#actTuNgay" />
-      <DatePicker fx:id="dateDenNgay" layoutX="198.0" layoutY="282.0" onAction="#actDenNgay" />
+      <Button fx:id="btnHuy" layoutX="482.0" layoutY="619.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="26.0" prefWidth="49.0" text="Hủy" />
+      <DatePicker fx:id="dateTuNgay" layoutX="195.0" layoutY="257.0" onAction="#actTuNgay" />
+      <DatePicker fx:id="dateDenNgay" layoutX="195.0" layoutY="320.0" onAction="#actDenNgay" />
+      <TextField fx:id="txtHoTen" layoutX="195.0" layoutY="45.0" prefHeight="26.0" prefWidth="327.0" />
+      <Text layoutX="58.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ Và Tên">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="DienThoai" layoutX="195.0" layoutY="388.0" prefHeight="26.0" prefWidth="327.0" />
+      <Text layoutX="56.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điện thoại" />
    </children>
 </AnchorPane>
