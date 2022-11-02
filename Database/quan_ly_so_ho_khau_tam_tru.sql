@@ -30,6 +30,7 @@ CREATE TABLE `tam_tru` (
   `tuNgay` date NOT NULL,
   `denNgay` date NOT NULL,
   `lyDo` varchar(100) NOT NULL,
+  `hoTen` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idNhanKhau` (`idNhanKhau`),
   CONSTRAINT `tam_tru_ibfk_1` FOREIGN KEY (`idNhanKhau`) REFERENCES `nhan_khau` (`ID`)
@@ -42,6 +43,7 @@ CREATE TABLE `tam_tru` (
 
 LOCK TABLES `tam_tru` WRITE;
 /*!40000 ALTER TABLE `tam_tru` DISABLE KEYS */;
+INSERT INTO `tam_tru` VALUES (1,11,'42345','hljlgl','2022-11-16','2022-11-17','gkgyk','Luu');
 /*!40000 ALTER TABLE `tam_tru` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 10:44:17
+-- Dump completed on 2022-11-02 11:28:36
