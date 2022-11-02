@@ -58,7 +58,8 @@ public class DKTamTruController implements Initializable {
 
     @FXML
     void actHuy(ActionEvent event) {
-
+        Stage stage = (Stage) btnHuy.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -69,30 +70,40 @@ public class DKTamTruController implements Initializable {
 
 
     @FXML
-    public  void actXacNhan(ActionEvent event){
-        tamTru.setMaGiayTamTru(txtMaGiay.getText());
-        tamTru.setNoiTamTru(txtNoiTamTru.getText());
-        tamTru.setTuNgay(java.sql.Date.valueOf(dateTuNgay.getValue()));
-        tamTru.setDenNgay(java.sql.Date.valueOf(dateDenNgay.getValue()));
-        tamTru.setLyDo(txtLyDo.getText());
-        tamTru.setID(DataAccess.tamTruDAO.getNewID());
-        tamTru.setIdNhanKhau(DataAccess.nhanKhauDAO.getNewID());
-        tamTru.setHoTen(txtHoTen.getText());
-        TamTruManager.List.add(tamTru);
+    public void actXacNhan(ActionEvent event) {
+        if (checkValid()) {
+            tamTru.setMaGiayTamTru(txtMaGiay.getText());
+            tamTru.setNoiTamTru(txtNoiTamTru.getText());
+            tamTru.setTuNgay(java.sql.Date.valueOf(dateTuNgay.getValue()));
+            tamTru.setDenNgay(java.sql.Date.valueOf(dateDenNgay.getValue()));
+            tamTru.setLyDo(txtLyDo.getText());
+            tamTru.setID(DataAccess.tamTruDAO.getNewID());
+            tamTru.setIdNhanKhau(DataAccess.nhanKhauDAO.getNewID());
+            tamTru.setHoTen(txtHoTen.getText());
+            TamTruManager.List.add(tamTru);
 
 
-        nhanKhau.setDiaChiHienTai(txtNoiTamTru.getText());
-        nhanKhau.setHoTen(txtHoTen.getText());
-        nhanKhau.setDienThoai(DienThoai.getText());
-        nhanKhau.setID(tamTru.getIdNhanKhau());
-        nhanKhau.setGhiChu("Tạm trú");
-        NhanKhauManager.nhanKhauList.add(nhanKhau);
-        DataAccess.nhanKhauDAO.insert(nhanKhau);
-        DataAccess.tamTruDAO.insert(tamTru);
-
-        Stage stage = (Stage) btnXacNhan.getScene().getWindow();
-        stage.close();
-
+            nhanKhau.setDiaChiHienTai(txtNoiTamTru.getText());
+            nhanKhau.setHoTen(txtHoTen.getText());
+            nhanKhau.setDienThoai(DienThoai.getText());
+            nhanKhau.setID(tamTru.getIdNhanKhau());
+            nhanKhau.setGhiChu("Tam tru");
+            NhanKhauManager.nhanKhauList.add(nhanKhau);
+            DataAccess.nhanKhauDAO.insert(nhanKhau);
+            DataAccess.tamTruDAO.insert(tamTru);
+            Stage stage = (Stage) btnXacNhan.getScene().getWindow();
+            stage.close();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Lỗi nhập thiếu");
+            alert.setContentText("Vui lòng nhập đầy đủ thông tin");
+            ButtonType isOK = new ButtonType("OK");
+            alert.getButtonTypes().setAll(isOK);
+            Optional<ButtonType> Result = alert.showAndWait();
+            if (Result.get() == isOK) {
+                alert.close();
+            }
+        }
     }
     boolean checkValid(){
         /**

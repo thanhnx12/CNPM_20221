@@ -41,7 +41,7 @@ public class HoKhauDAO implements DAO<HoKhau> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE ho_khau "+"SET maHoKhau = ?,idChuHo = ?, maKhuVuc = ?, diaChi = ?, ngayLap"
+            String sql="UPDATE ho_khau "+"SET maHoKhau = ?,idChuHo = ?, maKhuVuc = ?, diaChi = ?, ngayLap = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getMaHoKhau());
@@ -119,9 +119,9 @@ public class HoKhauDAO implements DAO<HoKhau> {
         return ans;
     }
 
-    public static void main(String[] args) {
-        HoKhauDAO hoKhauDAO = new HoKhauDAO();
-        System.out.println(hoKhauDAO.getNewID());
-    }
+//    public static void main(String[] args) {
+//        HoKhauDAO hoKhauDAO = new HoKhauDAO();
+//        System.out.println(hoKhauDAO.getNewID());
+//    }
 }
 

@@ -1,5 +1,6 @@
 package Project.Controller;
 
+import Project.DAO.DataAccess;
 import Project.Manager.NhanKhauManager;
 import Project.Model.NhanKhau;
 import Project.Model.TamTru;
@@ -14,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -83,7 +85,7 @@ public class NhanKhauController implements Initializable {
     }
     public void readDataFromDB() throws SQLException{
         data = FXCollections.observableArrayList();
-        data.addAll(NhanKhauManager.nhanKhauList);
+        data.addAll(DataAccess.nhanKhauDAO.selectAll());
         tableView.setItems(data);
     }
     @FXML
@@ -131,12 +133,24 @@ public class NhanKhauController implements Initializable {
 
     @FXML
     void actDSTamTru(ActionEvent event) {
-
+        ObservableList<NhanKhau> dataTamTru = FXCollections.observableArrayList();
+        for(NhanKhau x : NhanKhauManager.nhanKhauList){
+            if(x.getGhiChu().equals("Tạm trú")){
+                dataTamTru.add(x);
+            }
+        }
+        tableView.setItems(dataTamTru);
     }
 
     @FXML
     void actDSTamVang(ActionEvent event) {
-
+        ObservableList<NhanKhau> dataTamVang = FXCollections.observableArrayList();
+        for(NhanKhau x : NhanKhauManager.nhanKhauList){
+            if(x.getGhiChu().equals("Tạm vắng")){
+                dataTamVang.add(x);
+            }
+        }
+        tableView.setItems(dataTamVang);
     }
 
     @FXML
@@ -145,13 +159,53 @@ public class NhanKhauController implements Initializable {
     }
 
     @FXML
-    void actTatCa(ActionEvent event) {
-
+    void actTatCa(ActionEvent event) throws SQLException {
+        readDataFromDB();
     }
 
     @FXML
-    void actThemMoi(ActionEvent event) {
-
+    void actThemMoi(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("ThemNhanKhauView.fxml"));
+        Parent parent = fxmlLoader.load();
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Thêm nhân khẩu");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        readDataFromDB();
+    }
+    public static NhanKhau nhanKhauClick = new NhanKhau();
+    @FXML
+    void clickAction(MouseEvent event) throws IOException, SQLException {
+        if(event.getClickCount() == 2){
+            nhanKhauClick = tableView.getSelectionModel().getSelectedItem();
+            if(nhanKhauClick.getGhiChu().equals("Tam tru")){
+                FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("ThongTinTamTruView.fxml"));
+                Parent parent = fxmlLoader.load();
+                Stage stage1 = new Stage();
+                Scene scene1 = new Scene(parent);
+                stage1.setTitle("Thông tin Tạm trú");
+                stage1.setScene(scene1);
+                stage1.showAndWait();
+            }else if(nhanKhauClick.getGhiChu().equals("Tam vang")){
+                FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("ThongTinTamVangView.fxml"));
+                Parent parent = fxmlLoader.load();
+                Stage stage1 = new Stage();
+                Scene scene1 = new Scene(parent);
+                stage1.setTitle("Thông tin Tạm vắng");
+                stage1.setScene(scene1);
+                stage1.showAndWait();
+            }else{
+                FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("SuaNhanKhauView.fxml"));
+                Parent parent = fxmlLoader.load();
+                Stage stage1 = new Stage();
+                Scene scene1 = new Scene(parent);
+                stage1.setTitle("Thông tin chi tiết nhân khẩu");
+                stage1.setScene(scene1);
+                stage1.showAndWait();
+            }
+        }
+        readDataFromDB();
     }
 
 

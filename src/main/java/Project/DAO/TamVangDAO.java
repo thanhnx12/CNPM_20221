@@ -41,7 +41,7 @@ public class TamVangDAO implements DAO<TamVang> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE tam_vang "+"SET idNhanKhau = ?, maGiayTamVang = ?,tuNgay = ?, denNgay = ?, lyDo = ?"
+            String sql="UPDATE tam_vang "+"SET idNhanKhau = ?, maGiayTamVang = ?,tuNgay = ?, denNgay = ?, lyDo = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdNhanKhau());

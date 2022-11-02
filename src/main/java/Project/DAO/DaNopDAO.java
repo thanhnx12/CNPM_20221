@@ -39,7 +39,7 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ?"
+            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdPhi());

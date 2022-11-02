@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="664.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.ThongTinTamTruController">
+   <children>
+      <TextField fx:id="txtCCCD" layoutX="204.0" layoutY="103.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextField fx:id="txtMaGiay" layoutX="205.0" layoutY="159.0" prefHeight="26.0" prefWidth="327.0" />
+      <TextArea fx:id="txtLyDo" layoutX="205.0" layoutY="459.0" prefHeight="142.0" prefWidth="327.0" />
+      <Text layoutX="66.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="65.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Giấy Tạm Trú">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="65.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="69.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtNoiTamTru" layoutX="204.0" layoutY="215.0" prefHeight="26.0" prefWidth="327.0" />
+      <Button fx:id="btnXacNhan" layoutX="204.0" layoutY="629.0" mnemonicParsing="false" onAction="#actXacNhan" text="Xác nhận" />
+      <Text layoutX="65.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi Tạm Trú">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnHuy" layoutX="492.0" layoutY="629.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="26.0" prefWidth="49.0" text="Hủy" />
+      <DatePicker fx:id="dateTuNgay" layoutX="205.0" layoutY="267.0" onAction="#actTuNgay" />
+      <DatePicker fx:id="dateDenNgay" layoutX="205.0" layoutY="330.0" onAction="#actDenNgay" />
+      <TextField fx:id="txtHoTen" layoutX="205.0" layoutY="55.0" prefHeight="26.0" prefWidth="327.0" />
+      <Text layoutX="68.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ Và Tên">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="DienThoai" layoutX="205.0" layoutY="398.0" prefHeight="26.0" prefWidth="327.0" />
+      <Text layoutX="66.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điện thoại" />
+      <Button fx:id="btnXoaTamTru" layoutX="354.0" layoutY="629.0" mnemonicParsing="false" onAction="#actXoaTamTru" text="Xóa Tạm Trú" />
+   </children>
+</AnchorPane>
