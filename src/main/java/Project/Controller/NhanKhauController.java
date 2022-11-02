@@ -127,7 +127,16 @@ public class NhanKhauController implements Initializable {
     }
 
     @FXML
-    void actDKTamVang(ActionEvent event) {
+    void actDKTamVang(ActionEvent event) throws IOException, SQLException{
+        FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("DKTamVangView.fxml"));
+        Parent parent = fxmlLoader.load();
+        Project.Controller.DKTamVangController controller = (Project.Controller.DKTamVangController) fxmlLoader.getController();
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Đăng ký tạm vắng");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        readDataFromDB();
 
     }
 
@@ -187,6 +196,7 @@ public class NhanKhauController implements Initializable {
                 stage1.setTitle("Thông tin Tạm trú");
                 stage1.setScene(scene1);
                 stage1.showAndWait();
+                readDataFromDB();
             }else if(nhanKhauClick.getGhiChu().equals("Tam vang")){
                 FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("ThongTinTamVangView.fxml"));
                 Parent parent = fxmlLoader.load();
@@ -195,6 +205,7 @@ public class NhanKhauController implements Initializable {
                 stage1.setTitle("Thông tin Tạm vắng");
                 stage1.setScene(scene1);
                 stage1.showAndWait();
+                readDataFromDB();
             }else{
                 FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("SuaNhanKhauView.fxml"));
                 Parent parent = fxmlLoader.load();
@@ -203,9 +214,9 @@ public class NhanKhauController implements Initializable {
                 stage1.setTitle("Thông tin chi tiết nhân khẩu");
                 stage1.setScene(scene1);
                 stage1.showAndWait();
+                readDataFromDB();
             }
         }
-        readDataFromDB();
     }
 
 

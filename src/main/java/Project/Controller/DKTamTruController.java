@@ -8,13 +8,11 @@ import Project.Model.TamTru;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class DKTamTruController implements Initializable {
@@ -51,6 +49,7 @@ public class DKTamTruController implements Initializable {
 
     TamTru tamTru = new TamTru();
     NhanKhau nhanKhau = new NhanKhau();
+
     @FXML
     void actDenNgay(ActionEvent event) {
 
@@ -66,7 +65,6 @@ public class DKTamTruController implements Initializable {
     void actTuNgay(ActionEvent event) {
 
     }
-
 
 
     @FXML
@@ -107,9 +105,26 @@ public class DKTamTruController implements Initializable {
     }
     boolean checkValid(){
         /**
+         *
          * check du lieu nhap vao
          */
-        return true;
+        if (DienThoai.getText().isEmpty()){
+            return false;
+        } else if (txtCCCD.getText().isEmpty()) {
+            return false;
+        } else if (txtHoTen.getText().isEmpty()) {
+            return false;
+        } else if (txtNoiTamTru.getText().isEmpty()) {
+            return false;
+        } else if (txtLyDo.getText().isEmpty()){
+            return false;
+        } else if (txtMaGiay.getText().isEmpty()) {
+            return false;
+        } else if (dateDenNgay.getValue() == null) {
+            return false;
+        } else if ((dateTuNgay.getValue() == null)) {
+            return false;
+        }else return true;
     }
     public TamTru getTamTru(){
         return tamTru;

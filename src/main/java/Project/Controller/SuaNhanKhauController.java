@@ -72,36 +72,55 @@ public class SuaNhanKhauController implements Initializable {
         Stage stage = (Stage) huy.getScene().getWindow();
         stage.close();
     }
-
+    NhanKhau nhanKhau = new NhanKhau();
     @FXML
     void actXacNhan(ActionEvent event) {
+        if(checkValid()){
+            nhanKhau.setIdNguoiTao(Main.user.getID());
+            nhanKhau.setHoTen(hoVaTen.getText());
+            nhanKhau.setGhiChu(ghiChu.getText());
+            nhanKhau.setDienThoai(dienThoai.getText());
+            nhanKhau.setDiaChiHienTai(diaChiHienTai.getText());
+            nhanKhau.setNgayTao(java.sql.Date.valueOf(java.time.LocalDate.now()));
+            nhanKhau.setTonGiao(tonGiao.getText());
+            nhanKhau.setNoiThuongTru(noiThuongTru.getText());
+            nhanKhau.setSoHoChieu(hoChieuSo.getText());
+            nhanKhau.setSoCMT_CCCD(Integer.parseInt(soCMT_CCCD.getText()));
+            nhanKhau.setQuocTich(quocTich.getText());
+            nhanKhau.setNguyenQuan(nguyenQuan.getText());
+            nhanKhau.setGioiTinh(gioiTinh.getText());
+            nhanKhau.setNoiSinh(noiSinh.getText());
+            nhanKhau.setNgaySinh(java.sql.Date.valueOf(dateNgaySinh.getValue()));
+            nhanKhau.setDanToc(danToc.getText());
+            nhanKhau.setID(NhanKhauController.nhanKhauClick.getID());
+            DataAccess.nhanKhauDAO.update(nhanKhau);
+            for(NhanKhau x : NhanKhauManager.nhanKhauList){
+                if(x.getID() == nhanKhau.getID()) {
+                    NhanKhauManager.nhanKhauList.remove(x);
+                    NhanKhauManager.nhanKhauList.add(nhanKhau);
+                    break;
+                }
+            }
+
+            Stage stage = (Stage) xacNhan.getScene().getWindow();
+            stage.close();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Lỗi nhập thiếu");
+            alert.setContentText("Vui lòng nhập đầy đủ thông tin");
+            ButtonType isOK = new ButtonType("OK");
+            alert.getButtonTypes().setAll(isOK);
+            Optional<ButtonType> Result = alert.showAndWait();
+            if (Result.get() == isOK) {
+                alert.close();
+            }
+        }
 
     }
 
     @FXML
     void actXoaNhanKhau(ActionEvent event) {
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Xác nhận xóa nhân khẩu");
-//        alert.setContentText("Bạn có chắc chắn muốn xóa không");
-//        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-//        ButtonType cancelButton = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
-//        alert.getButtonTypes().setAll(okButton, cancelButton);
-//        alert.showAndWait().ifPresent(type -> {
-//            if (type == ButtonType.YES) {
-//                for(NhanKhau x : NhanKhauManager.nhanKhauList){
-//                    if(x.getID() == NhanKhauController.nhanKhauClick.getID()){
-//                        NhanKhauManager.nhanKhauList.remove(x);
-//                        break;
-//                    }
-//                }
-//                DataAccess.nhanKhauDAO.delete(NhanKhauController.nhanKhauClick);
-//                alert.close();
-//                Stage stage = (Stage) huy.getScene().getWindow();
-//                stage.close();
-//            } else {
-//                alert.close();
-//            }
-//        });
+
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Xóa nhân khẩu");
@@ -137,30 +156,52 @@ public class SuaNhanKhauController implements Initializable {
 
     }
     boolean checkValid(){
+        if(hoVaTen.getText().isEmpty()){
+            return false;
+        }else if(dateNgaySinh.getValue() == null){
+            return false;
+        }else if(nguyenQuan.getText().isEmpty()){
+            return false;
+        }else if(soCMT_CCCD.getText().isEmpty()){
+            return false;
+        }else if(noiThuongTru.getText().isEmpty()){
+            return false;
+        }else if(noiSinh.getText().isEmpty()){
+            return false;
+        }else if(gioiTinh.getText().isEmpty()){
+            return false;
+        }else if(tonGiao.getText().isEmpty()){
+            return false;
+        }else if(quocTich.getText().isEmpty()){
+            return false;
+        }else if(diaChiHienTai.getText().isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
 
-        return false;
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         NhanKhau a = new NhanKhau();
         a = NhanKhauController.nhanKhauClick;
         try{
-            hoVaTen.setText(a.getHoTen() + " ");
+            hoVaTen.setText(a.getHoTen() + "");
             if(a.getNgaySinh() != null){
                 dateNgaySinh.setValue(a.getNgaySinh().toLocalDate());
             }
-            danToc.setText(a.getDanToc() + " ");
-            nguyenQuan.setText(a.getNguyenQuan() + " ");
-            soCMT_CCCD.setText(a.getSoCMT_CCCD() + " ");
-            noiThuongTru.setText(a.getNoiThuongTru() + " ");
-            noiSinh.setText(a.getNoiSinh() + " ");
-            ghiChu.setText(a.getGhiChu()+ " ");
-            gioiTinh.setText(a.getGioiTinh() + " ");
-            tonGiao.setText(a.getTonGiao() + " ");
-            quocTich.setText(a.getQuocTich() + " ");
-            hoChieuSo.setText(a.getSoHoChieu() + " ");
-            diaChiHienTai.setText(a.getDiaChiHienTai() + " ");
-            dienThoai.setText(a.getDienThoai() + " ");
+            danToc.setText(a.getDanToc() + "");
+            nguyenQuan.setText(a.getNguyenQuan() + "");
+            soCMT_CCCD.setText(a.getSoCMT_CCCD() + "");
+            noiThuongTru.setText(a.getNoiThuongTru() + "");
+            noiSinh.setText(a.getNoiSinh() + "");
+            ghiChu.setText(a.getGhiChu()+ "");
+            gioiTinh.setText(a.getGioiTinh() + "");
+            tonGiao.setText(a.getTonGiao() + "");
+            quocTich.setText(a.getQuocTich() + "");
+            hoChieuSo.setText(a.getSoHoChieu() + "");
+            diaChiHienTai.setText(a.getDiaChiHienTai() + "");
+            dienThoai.setText(a.getDienThoai() + "");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
