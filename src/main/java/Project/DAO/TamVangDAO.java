@@ -41,7 +41,7 @@ public class TamVangDAO implements DAO<TamVang> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE tam_vang "+"SET idNhanKhau = ?, maGiayTamVang = ?,tuNgay = ?, denNgay = ?, lyDo = ?"
+            String sql="UPDATE tam_vang "+"SET idNhanKhau = ?, maGiayTamVang = ?,tuNgay = ?, denNgay = ?, lyDo = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdNhanKhau());
@@ -76,6 +76,23 @@ public class TamVangDAO implements DAO<TamVang> {
             e.printStackTrace();
         }
         return ans;
+    }
+
+    @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM tam_vang";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
     }
 
     @Override

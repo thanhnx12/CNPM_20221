@@ -59,11 +59,11 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE nhan_khau "+"SET soCMT_CCCD = ?,hoTen=?,ngaySinh=?,gioiTinh=?," +
-                    "noiSinh=?,nguyenQuan=?,danToc = ?,quocTich = ?, soHoChieu = ?, noiThuongTru = ?," +
-                    "diaChiHienTai = ?, tonGiao = ?, ghiChu = ?, ngayTao = ?, idNguoiXoa = ?, ngayXoa = ?, " +
-                    "idNguoiXoa = ?, lyDoXoa = ?,dienThoai = ?" +
-                    "WHERE ID = ?";
+            String sql="UPDATE nhan_khau "+"SET soCMT_CCCD = ? , hoTen = ? , ngaySinh = ? , gioiTinh=? , " +
+                    "noiSinh = ? , nguyenQuan = ? , danToc = ? , quocTich = ? , soHoChieu = ? , noiThuongTru = ? , " +
+                    "diaChiHienTai = ? , tonGiao = ? , ghiChu = ?, ngayTao = ? , idNguoiXoa = ?, ngayXoa = ?, " +
+                    "idNguoiXoa = ? , lyDoXoa = ? , dienThoai = ? " +
+                    "WHERE id = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getSoCMT_CCCD());
             st.setString(2,o.getHoTen());
@@ -114,6 +114,23 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM nhan_khau";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<NhanKhau> selectAll() {
         ArrayList<NhanKhau> ans=new ArrayList<>();
         try{
@@ -142,6 +159,7 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
                 o.setIdNguoiXoa(rs.getInt("idNguoiXoa"));
                 o.setLyDoXoa(rs.getString("lyDoXoa"));
                 o.setDienThoai(rs.getString("dienThoai"));
+                o.setDiaChiHienTai(rs.getString("diaChiHienTai"));
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);
@@ -152,12 +170,9 @@ public class NhanKhauDAO implements DAO<NhanKhau>{
     }
 
 //    public static void main(String[] args) {
-//        NhanKhau a = new NhanKhau(5,12345,"Duc",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
-//                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" );
+//        NhanKhau a = new NhanKhau(8,12345,"asdfawe",java.sql.Date.valueOf("2002-9-12"),"Nam","BacGiang","BacGiang","Kinh","Viet Nam",
+//                "123", "hoho", "haha","Khong","hohooh",java.sql.Date.valueOf("2002-9-12"),1,java.sql.Date.valueOf("2002-9-12"),1,"asdf" ,"09999");
 //        NhanKhauDAO b = new NhanKhauDAO();
-//        ArrayList<NhanKhau> arr = b.selectAll();
-//        for(NhanKhau x : arr){
-//            System.out.println(x.getHoTen());
-//        }
+//        b.insert(a);
 //    }
 }

@@ -38,7 +38,7 @@ public class UsersDAO implements DAO<Users>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE users "+"SET username = ?,password = ?"
+            String sql="UPDATE users "+"SET username = ?,password = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getUserName());
@@ -70,6 +70,23 @@ public class UsersDAO implements DAO<Users>{
             e.printStackTrace();
         }
         return ans;
+    }
+
+    @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM users";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
     }
 
     @Override

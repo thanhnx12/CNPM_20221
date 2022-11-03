@@ -1,27 +1,25 @@
 package Project.Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class DKTamTru {
+public class KhaiTuController {
 
     @FXML
-    private TextField txtCCCD;
+    private Button chonNguoiKhai;
 
     @FXML
-    private TextField txtDenNgay;
+    private Button chonNguoiMat;
 
     @FXML
     private TextArea txtLyDo;
 
     @FXML
-    private TextField txtMaGiay;
+    private TextField txtNguoiKhai;
 
     @FXML
-    private TextField txtNoiTamTru;
-
-    @FXML
-    private TextField txtTuNgay;
+    private TextField txtNguoiMat;
 
 }

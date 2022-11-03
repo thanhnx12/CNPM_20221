@@ -38,7 +38,7 @@ public class PhiDAO implements DAO<Phi>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE phi "+"SET tenLoaiPhi = ?,tuNguyen = ?"
+            String sql="UPDATE phi "+"SET tenLoaiPhi = ?,tuNguyen = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getTenLoaiPhi());
@@ -70,6 +70,23 @@ public class PhiDAO implements DAO<Phi>{
             e.printStackTrace();
         }
         return ans;
+    }
+
+    @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM phi";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
     }
 
     @Override

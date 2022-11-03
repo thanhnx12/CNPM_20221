@@ -42,7 +42,7 @@ public class KhaiTuDAO implements DAO<KhaiTu> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE khai_tu "+"SET soGiayKhaiTu = ?, idNguoiKhai = ?,idNguoiChet = ? ,ngayKhai = ?, ngayChet = ?, lyDoChet = ?"
+            String sql="UPDATE khai_tu "+"SET soGiayKhaiTu = ?, idNguoiKhai = ?,idNguoiChet = ? ,ngayKhai = ?, ngayChet = ?, lyDoChet = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getSoGiayKhaiTu());
@@ -78,6 +78,23 @@ public class KhaiTuDAO implements DAO<KhaiTu> {
             e.printStackTrace();
         }
         return ans;
+    }
+
+    @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM khai_tu";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
     }
 
     @Override

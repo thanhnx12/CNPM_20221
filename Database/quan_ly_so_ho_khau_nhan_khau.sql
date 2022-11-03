@@ -24,21 +24,21 @@ DROP TABLE IF EXISTS `nhan_khau`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `nhan_khau` (
   `ID` int NOT NULL,
-  `soCMT_CCCD` int NOT NULL,
+  `soCMT_CCCD` int DEFAULT NULL,
   `hoTen` varchar(100) NOT NULL,
-  `ngaySinh` date NOT NULL,
-  `gioiTinh` varchar(100) NOT NULL,
-  `noiSinh` varchar(100) NOT NULL DEFAULT '',
-  `nguyenQuan` varchar(100) NOT NULL,
-  `danToc` varchar(100) NOT NULL,
-  `quocTich` varchar(100) NOT NULL,
+  `ngaySinh` date DEFAULT NULL,
+  `gioiTinh` varchar(100) DEFAULT NULL,
+  `noiSinh` varchar(100) DEFAULT '',
+  `nguyenQuan` varchar(100) DEFAULT NULL,
+  `danToc` varchar(100) DEFAULT NULL,
+  `quocTich` varchar(100) DEFAULT NULL,
   `soHoChieu` varchar(100) DEFAULT NULL,
-  `noiThuongTru` varchar(100) NOT NULL,
-  `diaChiHienTai` varchar(100) NOT NULL,
-  `tonGiao` varchar(100) NOT NULL,
-  `ghiChu` varchar(100) NOT NULL,
-  `ngayTao` date NOT NULL,
-  `idNguoiTao` int NOT NULL,
+  `noiThuongTru` varchar(100) DEFAULT NULL,
+  `diaChiHienTai` varchar(100) DEFAULT NULL,
+  `tonGiao` varchar(100) DEFAULT NULL,
+  `ghiChu` varchar(100) DEFAULT NULL,
+  `ngayTao` date DEFAULT NULL,
+  `idNguoiTao` int DEFAULT NULL,
   `ngayXoa` date DEFAULT NULL,
   `idNguoiXoa` int DEFAULT NULL,
   `lyDoXoa` varchar(100) DEFAULT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `nhan_khau` (
 
 LOCK TABLES `nhan_khau` WRITE;
 /*!40000 ALTER TABLE `nhan_khau` DISABLE KEYS */;
-INSERT INTO `nhan_khau` VALUES (1,12345,'Ngoc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(2,12345,'Thanh','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(3,12345,'Nam','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(4,12345,'Hai','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL),(5,12345,'Duc','2002-09-12','Nam','BacGiang','BacGiang','Kinh','Viet Nam','123','hoho','haha','Khong','hohooh','2002-09-12',1,'2002-09-12',1,'asdf',NULL);
+INSERT INTO `nhan_khau` VALUES (1,132123,'Ngoc','2022-11-15','Nữ','ăefawef','hahaah','ahahah','ádf','1231','àdadsf','ádf','ádf','gay','2022-11-02',1,NULL,1,NULL,'06515'),(2,0,'gà',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ababab',NULL,'Tam tru',NULL,1,NULL,1,NULL,'029595'),(3,123123,'Thanh','2022-11-15','awef','awfeawef','awefawef','awefawef','awef','123','afwefawe','awef','awef','Tam vang','2022-11-02',1,NULL,1,NULL,'891');
 /*!40000 ALTER TABLE `nhan_khau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01 10:44:18
+-- Dump completed on 2022-11-02 21:12:53

@@ -41,7 +41,7 @@ public class HoKhauDAO implements DAO<HoKhau> {
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE ho_khau "+"SET maHoKhau = ?,idChuHo = ?, maKhuVuc = ?, diaChi = ?, ngayLap"
+            String sql="UPDATE ho_khau "+"SET maHoKhau = ?,idChuHo = ?, maKhuVuc = ?, diaChi = ?, ngayLap = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getMaHoKhau());
@@ -78,6 +78,23 @@ public class HoKhauDAO implements DAO<HoKhau> {
     }
 
     @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM ho_khau";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
+    }
+
+    @Override
     public ArrayList<HoKhau> selectAll() {
         ArrayList<HoKhau> ans=new ArrayList<>();
         try{
@@ -101,4 +118,10 @@ public class HoKhauDAO implements DAO<HoKhau> {
         }
         return ans;
     }
+
+//    public static void main(String[] args) {
+//        HoKhauDAO hoKhauDAO = new HoKhauDAO();
+//        System.out.println(hoKhauDAO.getNewID());
+//    }
 }
+

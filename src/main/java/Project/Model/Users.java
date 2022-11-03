@@ -6,7 +6,7 @@ public class Users {
     private String password;
 
     public Users() {
-
+        this.setID(1);
     }
 
     public int getID() {

@@ -39,7 +39,7 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ?"
+            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ? "
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdPhi());
@@ -72,6 +72,23 @@ public class DaNopDAO implements DAO<DaNop>{
             e.printStackTrace();
         }
         return ans;
+    }
+
+    @Override
+    public int getNewID() {
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT MAX(id) as maxID FROM da_nop";
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("maxID");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans + 1;
     }
 
     @Override

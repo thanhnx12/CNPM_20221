@@ -9,6 +9,15 @@ public class HoKhau {
     private String maKhuVuc;
     private String diaChi;
     private Date ngayLap;
+    private NhanKhau chuHo;
+
+    public NhanKhau getChuHo() {
+        return chuHo;
+    }
+
+    public void setChuHo(NhanKhau chuHo) {
+        this.chuHo = chuHo;
+    }
 
     public HoKhau(int ID, String maHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
         this.ID = ID;
