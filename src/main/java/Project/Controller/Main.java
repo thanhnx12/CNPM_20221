@@ -1,9 +1,13 @@
 package Project.Controller;
 
+import Project.DAO.HoKhauDAO;
 import Project.DAO.NhanKhauDAO;
 import Project.DAO.TamTruDAO;
+import Project.DAO.ThanhVienDAO;
+import Project.Manager.HoKhauManager;
 import Project.Manager.NhanKhauManager;
 import Project.Manager.TamTruManager;
+import Project.Manager.ThanhVienManager;
 import Project.Model.NhanKhau;
 import Project.Model.Users;
 import javafx.application.Application;
@@ -28,7 +32,7 @@ public class Main extends Application {
 //            primaryStage.setScene(scene);
 //            primaryStage.setTitle("Quan Ly Thu Phi");
 //            primaryStage.show();
-            Parent root = FXMLLoader.load(this.getClass().getResource("NhanKhauView.fxml"));
+            Parent root = FXMLLoader.load(this.getClass().getResource("HoKhau.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("One Media");
@@ -43,6 +47,9 @@ public class Main extends Application {
         TamTruDAO tamTruDAO = new TamTruDAO();
         TamTruManager.List = tamTruDAO.selectAll();
         NhanKhauManager.nhanKhauList = nhanKhauDAO.selectAll();
+        HoKhauManager.List =new HoKhauDAO().selectAll();
+        NhanKhauManager.nhanKhauList = new NhanKhauDAO().selectAll();
+        ThanhVienManager.List =  new ThanhVienDAO().selectAll();
         launch();
     }
 //    public void close()
