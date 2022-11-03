@@ -88,7 +88,7 @@ public class HoKhauDAO implements DAO<HoKhau> {
             while(rs.next()){
                 HoKhau o=new HoKhau();
                 o.setID(rs.getInt("ID"));
-                o.setMaHoKhau(rs.getString("maHoKhau"));
+                o.setmaHoKhau(rs.getString("maHoKhau"));
                 o.setDiaChi(rs.getString("diaChi"));
                 o.setIdChuHo(rs.getInt("idChuHo"));
                 o.setMaKhuVuc(rs.getString("maKhuVuc"));

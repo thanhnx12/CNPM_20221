@@ -10,6 +10,8 @@ public class HoKhau {
     private String diaChi;
     private Date ngayLap;
 
+    private NhanKhau chuHo;
+
     public HoKhau(int ID, String maHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
         this.ID = ID;
         this.maHoKhau = maHoKhau;
@@ -35,7 +37,7 @@ public class HoKhau {
         return maHoKhau;
     }
 
-    public void setMaHoKhau(String maHoKhau) {
+    public void setmaHoKhau(String maHoKhau) {
         this.maHoKhau = maHoKhau;
     }
 
@@ -69,5 +71,17 @@ public class HoKhau {
 
     public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
+    }
+
+    public void setMaHoKhau(String maHoKhau) {
+        this.maHoKhau = maHoKhau;
+    }
+
+    public NhanKhau getChuHo() {
+        return chuHo;
+    }
+
+    public void setChuHo(NhanKhau chuHo) {
+        this.chuHo = chuHo;
     }
 }

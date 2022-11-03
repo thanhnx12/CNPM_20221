@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NhanKhau implements Initializable {
+public class NhanKhauController implements Initializable {
 
     @FXML
     private Button btnDK;
@@ -37,16 +37,16 @@ public class NhanKhau implements Initializable {
     private TableColumn<?, ?> cDiaChi;
 
     @FXML
-    private TableColumn<NhanKhau, String> cDienThoai;
+    private TableColumn<NhanKhauController, String> cDienThoai;
 
     @FXML
-    private TableColumn<NhanKhau, String> cHoVaTen;
+    private TableColumn<NhanKhauController, String> cHoVaTen;
 
     @FXML
-    private TableColumn<NhanKhau, Integer> cID;
+    private TableColumn<NhanKhauController, Integer> cID;
 
     @FXML
-    private TableView<NhanKhau> tableView;
+    private TableView<NhanKhauController> tableView;
 
     @FXML
     private TextField txtSearch;

@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 
 import Project.Manager.NhanKhauManager;
 import Project.Model.NhanKhau;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -44,7 +43,7 @@ public class ChonNhanKhauController implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         //setup cac cot
-        colID.setCellValueFactory(new PropertyValueFactory<NhanKhau, String>("id"));
+        colID.setCellValueFactory(new PropertyValueFactory<NhanKhau, String>("ID"));
         colHoTen.setCellValueFactory(new PropertyValueFactory<NhanKhau, String>("hoTen"));
         colCCCD.setCellValueFactory(new PropertyValueFactory<NhanKhau, String>("soCMT_CCCD"));
         colDiaChi.setCellValueFactory(new PropertyValueFactory<NhanKhau, String>("diaChiHienTai"));

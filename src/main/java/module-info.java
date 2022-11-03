@@ -3,7 +3,6 @@ module Project {
     requires javafx.fxml;
     requires java.sql;
 
-
     exports Project.Model;
     opens Project.Model to javafx.fxml;
     exports Project.Controller;
