@@ -13,7 +13,6 @@ public class NhanKhau {
     private String soHoChieu;
     private String noiThuongTru;
     private String diaChiHienTai;
-
     private String tonGiao;
     private String ghiChu;
     private Date ngayTao;

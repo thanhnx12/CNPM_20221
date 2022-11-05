@@ -19,13 +19,14 @@ public class HoKhau {
         this.chuHo = chuHo;
     }
 
-    public HoKhau(int ID, String maHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
+    public HoKhau(int ID, String maHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap, NhanKhau chuHo) {
         this.ID = ID;
         this.maHoKhau = maHoKhau;
         this.idChuHo = idChuHo;
         this.maKhuVuc = maKhuVuc;
         this.diaChi = diaChi;
         this.ngayLap = ngayLap;
+        this.chuHo = chuHo;
     }
 
     public HoKhau() {
