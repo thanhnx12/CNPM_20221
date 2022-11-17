@@ -13,10 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -74,8 +71,8 @@ public class HoKhauController implements Initializable {
     @FXML
     private TableColumn<HoKhau, String> colMaHoKhau;
 
-   @FXML
-   private TableColumn<HoKhau, String> colSoDienThoai;
+    @FXML
+    private TableColumn<HoKhau, String> colSoDienThoai;
 
     @FXML
     private TableView<HoKhau> tableHoKhau;
@@ -86,13 +83,57 @@ public class HoKhauController implements Initializable {
     }
 
     @FXML
-    void suaHoKhau(ActionEvent event) {
-
+    void suaHoKhau(ActionEvent event) throws IOException {
+        HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
+        try{
+            if(hoKhauchon==null){
+                throw new Exception("Moi ban chon 1 ho khau");
+            }
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lỗi");
+            alert.setContentText("Sửa lại");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+            return;
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SuaHoKhauView.fxml"));
+        Parent parent = fxmlLoader.load();
+        SuaHoKhauController controller = (SuaHoKhauController) fxmlLoader.getController();
+        controller.setup(hoKhauchon);
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Sua Ho Khau");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        tatCaHoKhau();
     }
 
     @FXML
-    void tachHoKhau(ActionEvent event) {
-
+    void tachHoKhau(ActionEvent event) throws IOException {
+        HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
+        try{
+            if(hoKhauchon==null){
+                throw new Exception("Moi ban chon 1 ho khau");
+            }
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lỗi");
+            alert.setContentText("Sửa lại");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+            return;
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("TachHoKhauView.fxml"));
+        Parent parent = fxmlLoader.load();
+        TachHoKhauController controller = (TachHoKhauController) fxmlLoader.getController();
+        controller.setup(hoKhauchon);
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Tach Ho Khau");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        tatCaHoKhau();
     }
 
     @FXML
