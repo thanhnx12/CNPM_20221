@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class ThanhVienManager implements Manager<ThanhVien> {
     public static ArrayList<ThanhVien> List = new ArrayList<>();
+    
     @Override
     public void add(ThanhVien o) {
         List.add(o);

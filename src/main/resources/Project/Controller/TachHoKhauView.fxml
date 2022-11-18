@@ -52,7 +52,7 @@
       <TextField fx:id="chuHoMoiField" editable="false" layoutX="532.0" layoutY="298.0" prefWidth="200.0" style="-fx-background-color: #C4C4C4;" />
       <Button layoutX="467.0" layoutY="298.0" mnemonicParsing="false" onAction="#chonChuHoMoi" prefHeight="26.0" prefWidth="53.0" text="Chọn" />
       <Button layoutX="486.0" layoutY="677.0" mnemonicParsing="false" onAction="#huy" prefHeight="26.0" prefWidth="93.0" text="Hủy" />
-      <Button layoutX="359.0" layoutY="473.0" mnemonicParsing="false" text="&gt;&gt;" />
-      <Button layoutX="359.0" layoutY="518.0" mnemonicParsing="false" text="&lt;&lt;" />
+      <Button layoutX="359.0" layoutY="473.0" mnemonicParsing="false" onAction="#chuyenSangMoi" text="&gt;&gt;" />
+      <Button layoutX="359.0" layoutY="518.0" mnemonicParsing="false" onAction="#chuyenSangCu" text="&lt;&lt;" />
    </children>
 </AnchorPane>

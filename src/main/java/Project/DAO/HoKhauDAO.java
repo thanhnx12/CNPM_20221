@@ -49,6 +49,7 @@ public class HoKhauDAO implements DAO<HoKhau> {
             st.setString(3,o.getMaKhuVuc());
             st.setString(4,o.getDiaChi());
             st.setDate(5,o.getNgayLap());
+            st.setInt(6, o.getID());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");

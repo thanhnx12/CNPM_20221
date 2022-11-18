@@ -102,6 +102,14 @@ public class ThanhVienDAO implements DAO<ThanhVien>{
                 o.setIdNhanKhau(rs.getInt("idNhanKhau"));
                 o.setIdHoKhau(rs.getInt("idHoKhau"));
                 o.setQuanHeVoiChuHo(rs.getString("quanHeVoiChuHo"));
+                String sql1="SELECT * FROM nhan_khau WHERE ID = ?";
+                PreparedStatement st1 = con.prepareStatement(sql1);
+                st1.setInt(1, o.getIdNhanKhau());
+                ResultSet rs1 = st1.executeQuery();
+                if(rs1.next()) {
+                    o.setNgaySinh(rs1.getDate("ngaySinh"));
+                    o.setHoVaTen(rs1.getString("hoTen"));
+                }
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);

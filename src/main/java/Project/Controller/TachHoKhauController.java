@@ -93,27 +93,22 @@ public class TachHoKhauController implements Initializable{
         }
         tvChuHoMoi = tvChon;
         thanhVienMoiList.remove(tvChon);
-        hoKhauMoiTable.getItems().remove(tvChon);
         for(NhanKhau nk : NhanKhauManager.nhanKhauList) {
             if(nk.getID() == tvChon.getIdNhanKhau()) chuHoMoi = nk;
         }
-        chuHoField.setText(chuHoMoi.getHoTen());  
+        chuHoMoiField.setText(chuHoMoi.getHoTen());  
     }
     
     public void chuyenSangMoi(ActionEvent event) {
         ThanhVien tvChon = hoKhauTable.getSelectionModel().getSelectedItem();
         thanhVienList.remove(tvChon);
         thanhVienMoiList.add(tvChon);
-        hoKhauTable.getItems().remove(tvChon);
-        hoKhauMoiTable.getItems().add(tvChon);
     }
 
     public void chuyenSangCu(ActionEvent event) {
         ThanhVien tvChon = hoKhauMoiTable.getSelectionModel().getSelectedItem();
         thanhVienMoiList.remove(tvChon);
         thanhVienList.add(tvChon);
-        hoKhauMoiTable.getItems().remove(tvChon);
-        hoKhauTable.getItems().add(tvChon);
     }
 
     public void xacNhan(ActionEvent event) {
@@ -122,11 +117,28 @@ public class TachHoKhauController implements Initializable{
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Vui long nhap ma ho khau cho ho khau moi");
+            alert.show();
+            return;
         }
-
+        else if(chuHoMoi == null) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Vui long chon chu ho cho ho khau moi");
+            alert.show();
+            return;
+        }
+        for(HoKhau hk : HoKhauManager.List) {
+            if(maHoKhauMoi.strip().equals(hk.getMaHoKhau())) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Ma ho khau bi trung lap voi ho khac");
+                alert.show();
+                return;
+            }
+        }
         hoKhauMoi = new HoKhau(HoKhauManager.List.size(), maHoKhauMoi, chuHoMoi.getID(), hoKhauChon.getMaKhuVuc(), hoKhauChon.getDiaChi(), Date.valueOf(LocalDate.now()), chuHoMoi);
         DataAccess.hoKhauDAO.insert(hoKhauMoi);
-        HoKhauManager.List.add(hoKhauChon);
+        HoKhauManager.List.add(hoKhauMoi);
         for(ThanhVien tv : thanhVienMoiList) {
             DataAccess.thanhVienDAO.delete(tv);
             ThanhVienManager.List.remove(tv);
