@@ -77,7 +77,9 @@ public class SuaHoKhauController implements Initializable{
         ngaySinhChuHoField.setText(new SimpleDateFormat("dd.MM.yyyy").format(chuHo.getNgaySinh()));
         cmtChuHoField.setText(Integer.toString(chuHo.getSoCMT_CCCD()));
         for(ThanhVien tv : ThanhVienManager.List) {
-            if(tv.getIdHoKhau() == hoKhauChon.getID()) thanhVienList.add(tv);
+            if(tv.getIdHoKhau() == hoKhauChon.getID()) {
+                thanhVienList.add(tv);
+            }
         }
         thanhVienTable.setItems(thanhVienList);
     }
@@ -93,13 +95,14 @@ public class SuaHoKhauController implements Initializable{
 
     public void themThanhVien(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ChonNhanKhauView.fxml"));
-        ChonNhanKhauController chonNhanKhau = loader.getController();
         Parent root = loader.load();
+        ChonNhanKhauController chonNhanKhau = loader.getController();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.showAndWait();
         NhanKhau nhanKhauThem = chonNhanKhau.getNhanKhauChon();
+        System.out.println("them nua");
         for(ThanhVien tv : ThanhVienManager.List) {
             if(tv.getIdNhanKhau() == nhanKhauThem.getID()) {
                 Alert alert = new Alert(AlertType.ERROR);
@@ -118,11 +121,27 @@ public class SuaHoKhauController implements Initializable{
                 return;
             }
         }
-        ThanhVien thanhVienThem = new ThanhVien(nhanKhauThem.getID(), hoKhauChon.getID(), null, nhanKhauThem.getHoTen(), nhanKhauThem.getNgaySinh());
+        for(ThanhVien tv : themThanhVienList) {
+            if(nhanKhauThem.getID() == tv.getIdNhanKhau()) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Bạn đã chọn nhân khẩu này trước đó.");
+                alert.show();
+                return;
+            }
+        }
+        loader = new FXMLLoader(Main.class.getResource("QHeVoiChuHo.fxml"));
+        root = loader.load();
+        QHeVoiChuHo chonQhe = (QHeVoiChuHo) loader.getController();
+        scene = new Scene(root);
+        stage = new Stage();
+        stage.setScene(scene);
+        stage.showAndWait();
+        String quanHe = chonQhe.getQheVsChuHo();
+        ThanhVien thanhVienThem = new ThanhVien(nhanKhauThem.getID(), hoKhauChon.getID(), quanHe, nhanKhauThem.getHoTen(), nhanKhauThem.getNgaySinh());
         themThanhVienList.add(thanhVienThem);
         if(xoaThanhVienList.contains(thanhVienThem)) xoaThanhVienList.remove(thanhVienThem);
         thanhVienList.add(thanhVienThem);
-        thanhVienTable.getItems().add(thanhVienThem);
     }
 
     public void xoaThanhVien(ActionEvent event) {
@@ -134,7 +153,6 @@ public class SuaHoKhauController implements Initializable{
         xoaThanhVienList.add(thanhVienXoa);
         if(themThanhVienList.contains(thanhVienXoa)) themThanhVienList.remove(thanhVienXoa);
         thanhVienList.remove(thanhVienXoa);
-        thanhVienTable.getItems().remove(thanhVienXoa);
     }
 
     public void luu(ActionEvent event) {
