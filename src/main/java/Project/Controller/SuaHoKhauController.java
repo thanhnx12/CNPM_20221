@@ -85,12 +85,12 @@ public class SuaHoKhauController implements Initializable{
     }
 
     public void chonChuHo(ActionEvent event) {
-        ThanhVien chuHoChon = thanhVienTable.getSelectionModel().getSelectedItem();
-        chuHo = NhanKhauManager.nhanKhauList.get(chuHoChon.getIdNhanKhau());
-        chuHoField.setText(chuHo.getHoTen());
-        ngaySinhChuHoField.setText(new SimpleDateFormat("dd.MM.yyyy").format(chuHo.getNgaySinh()));
-        cmtChuHoField.setText(Integer.toString(chuHo.getSoCMT_CCCD()));
-        xoaTV(chuHoChon);
+//        ThanhVien chuHoChon = thanhVienTable.getSelectionModel().getSelectedItem();
+//        chuHo = NhanKhauManager.nhanKhauList.get(chuHoChon.getIdNhanKhau());
+//        chuHoField.setText(chuHo.getHoTen());
+//        ngaySinhChuHoField.setText(new SimpleDateFormat("dd.MM.yyyy").format(chuHo.getNgaySinh()));
+//        cmtChuHoField.setText(Integer.toString(chuHo.getSoCMT_CCCD()));
+//        xoaTV(chuHoChon);
     }
 
     public void themThanhVien(ActionEvent event) throws IOException {

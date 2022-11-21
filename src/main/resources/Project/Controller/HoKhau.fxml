@@ -23,6 +23,7 @@
       <Button fx:id="btnSuaHoKhau" layoutX="568.0" layoutY="374.0" mnemonicParsing="false" onAction="#suaHoKhau" prefHeight="45.0" prefWidth="128.0" text="Sửa hộ khẩu" />
       <TextField fx:id="inpTimKiem" layoutX="54.0" layoutY="45.0" prefHeight="26.0" prefWidth="246.0" />
       <Button fx:id="btnTimKiem" layoutX="326.0" layoutY="45.0" mnemonicParsing="false" onAction="#timKiem" prefHeight="26.0" prefWidth="84.0" text="Tìm kiếm" />
-      <Button layoutX="568.0" layoutY="443.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="128.0" text="Chi Tiết" />
+      <Button fx:id="btnChiTiet" layoutX="568.0" layoutY="443.0" mnemonicParsing="false" onAction="#chiTiet" prefHeight="45.0" prefWidth="128.0" text="Chi Tiết" />
+      <Button fx:id="btnXoa" layoutX="568.0" layoutY="511.0" mnemonicParsing="false" onAction="#xoaHoKhau" prefHeight="45.0" prefWidth="128.0" text="Xóa hộ khẩu" />
    </children>
 </AnchorPane>

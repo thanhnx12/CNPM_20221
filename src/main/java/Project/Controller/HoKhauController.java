@@ -1,9 +1,14 @@
 package Project.Controller;
 
+import Project.DAO.HoKhauDAO;
+import Project.DAO.NhanKhauDAO;
+import Project.DAO.ThanhVienDAO;
 import Project.Manager.HoKhauManager;
 import Project.Manager.NhanKhauManager;
+import Project.Manager.ThanhVienManager;
 import Project.Model.HoKhau;
 import Project.Model.NhanKhau;
+import Project.Model.ThanhVien;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +25,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HoKhauController implements Initializable {
@@ -44,7 +50,8 @@ public class HoKhauController implements Initializable {
 
     @FXML
     private Button btnChuyenDi;
-
+    @FXML
+    private Button btnChiTiet;
     @FXML
     private Button btnSuaHoKhau;
 
@@ -55,6 +62,9 @@ public class HoKhauController implements Initializable {
     @FXML
 
     private TextField inpTimKiem;
+
+    @FXML
+    private Button btnXoa;
 
     @FXML
     private Button btnTatCa;
@@ -77,6 +87,71 @@ public class HoKhauController implements Initializable {
     @FXML
     private TableView<HoKhau> tableHoKhau;
 
+
+
+    @FXML
+    void xoaHoKhau(ActionEvent event) {
+        HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
+        try{
+            if(hoKhauchon==null){
+                throw new Exception("Bạn chưa chọn hộ khẩu");
+            }
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lỗi");
+            alert.setContentText("Mời bạn chọn một hộ khẩu");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+            return;
+        }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Cảnh báo");
+        alert.setContentText("Nếu bạn nhấn đồng ý, bạn không thể hoàn tác");
+        alert.setHeaderText("Cảnh báo: bạn có chắc muốn xóa hộ khẩu này không");
+        alert.showAndWait();
+//        System.out.println((alert.getResult().getText().getClass().getName()));
+        if(alert.getResult().getText().equals("OK")){
+            ArrayList<ThanhVien> thanhVienList = new ArrayList<>(ThanhVienManager.List);
+            System.out.println("dang xoa");
+            for (ThanhVien thanhVien: thanhVienList) {
+                if(thanhVien.getIdHoKhau() == hoKhauchon.getID()){
+                    ThanhVienManager.List.remove(thanhVien);
+                    new ThanhVienDAO().delete(thanhVien);
+                }
+            }
+            new HoKhauDAO().delete(hoKhauchon);
+            HoKhauManager.List.remove(hoKhauchon);
+        }
+        tatCaHoKhau();
+        return;
+    }
+
+    @FXML
+    void chiTiet(ActionEvent event) throws IOException {
+        HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
+        try{
+            if(hoKhauchon==null){
+                throw new Exception("Bạn chưa chọn hộ khẩu");
+            }
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lỗi");
+            alert.setContentText("Mời bạn chọn một hộ khẩu");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+            return;
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ChiTietHoKhau.fxml"));
+        Parent parent = fxmlLoader.load();
+        ChiTietHoKhau controller = (ChiTietHoKhau) fxmlLoader.getController();
+        System.out.println(controller);
+        controller.setup(hoKhauchon);
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Chi tiết hộ khẩu");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+    }
     @FXML
     void chuyenDi(ActionEvent event) {
 
@@ -87,12 +162,12 @@ public class HoKhauController implements Initializable {
         HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
         try{
             if(hoKhauchon==null){
-                throw new Exception("Moi ban chon 1 ho khau");
+                throw new Exception("Bạn chưa chọn hộ khẩu");
             }
         }catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Lỗi");
-            alert.setContentText("Sửa lại");
+            alert.setContentText("Mời bạn chọn một hộ khẩu");
             alert.setHeaderText(e.getMessage());
             alert.show();
             return;
@@ -103,7 +178,7 @@ public class HoKhauController implements Initializable {
         controller.setup(hoKhauchon);
         Stage stage1 = new Stage();
         Scene scene1 = new Scene(parent);
-        stage1.setTitle("Sua Ho Khau");
+        stage1.setTitle("Sửa hộ khẩu");
         stage1.setScene(scene1);
         stage1.showAndWait();
         tatCaHoKhau();
@@ -114,12 +189,12 @@ public class HoKhauController implements Initializable {
         HoKhau hoKhauchon = tableHoKhau.getSelectionModel().getSelectedItem();
         try{
             if(hoKhauchon==null){
-                throw new Exception("Moi ban chon 1 ho khau");
+                throw new Exception("Bạn chưa chọn hộ khẩu");
             }
         }catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Lỗi");
-            alert.setContentText("Sửa lại");
+            alert.setContentText("Mời bạn chọn một hộ khẩu");
             alert.setHeaderText(e.getMessage());
             alert.show();
             return;
@@ -130,7 +205,7 @@ public class HoKhauController implements Initializable {
         controller.setup(hoKhauchon);
         Stage stage1 = new Stage();
         Scene scene1 = new Scene(parent);
-        stage1.setTitle("Tach Ho Khau");
+        stage1.setTitle("Tách hộ khẩu");
         stage1.setScene(scene1);
         stage1.showAndWait();
         tatCaHoKhau();
@@ -149,7 +224,7 @@ public class HoKhauController implements Initializable {
         ThemHoKhauController controller = (ThemHoKhauController) fxmlLoader.getController();
         Stage stage1 = new Stage();
         Scene scene1 = new Scene(parent);
-        stage1.setTitle("Them Ho Khau");
+        stage1.setTitle("Thêm hộ khẩu");
         stage1.setScene(scene1);
         stage1.showAndWait();
         tatCaHoKhau();
