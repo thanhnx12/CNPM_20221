@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 public class ThemHoKhauController implements Initializable {
     ObservableList<ThanhVien> listThanhVien = FXCollections.observableArrayList();
     NhanKhau nhanKhauchon = new NhanKhau();
+    NhanKhau chuHo = new NhanKhau();
     HoKhau hoKhauMoi = new HoKhau();
     @FXML
     private Button btnChonChuHo;
@@ -83,21 +84,41 @@ public class ThemHoKhauController implements Initializable {
         stage1.setTitle("Chon chu ho");
         stage1.setScene(scene1);
         stage1.showAndWait();
-        nhanKhauchon = controller.nhanKhauChon;
-        if(nhanKhauchon != null){
+        chuHo = controller.nhanKhauChon;
+        if(chuHo != null){
             for (HoKhau hoKhau: HoKhauManager.List) {
-                if(hoKhau.getChuHo().equals(nhanKhauchon)){
+                if(hoKhau.getChuHo().equals(chuHo)){
                     Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Lỗi");
                     alert.setContentText("Sửa lại");
                     alert.setHeaderText("Nhan khau nay dang la chu ho cua 1 ho khac");
-                    alert.show();
+                    alert.showAndWait();
                     return;
                 }
             }
-            inpChuHo.setText(nhanKhauchon.getHoTen());
-            inpNgaySinh.setText((nhanKhauchon.getNgaySinh()).toString());
-            inpSoCmtCccd.setText(Integer.toString (nhanKhauchon.getSoCMT_CCCD()));
+            for (ThanhVien thanhVien : ThanhVienManager.List) {
+                if(thanhVien.getIdNhanKhau() == chuHo.getID()){
+                    Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Lỗi");
+                    alert.setContentText("Sửa lại");
+                    alert.setHeaderText("Nhan khau nay dang la thanh vien cua 1 ho khac");
+                    alert.showAndWait();
+                    return;
+                }
+            }
+            for (ThanhVien thanhVien : listThanhVien) {
+                if(thanhVien.getIdNhanKhau() == chuHo.getID()){
+                    Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Lỗi");
+                    alert.setContentText("Sửa lại");
+                    alert.setHeaderText("Nhân khẩu này đang được chọn làm thành viên");
+                    alert.showAndWait();
+                    return;
+                }
+            }
+            inpChuHo.setText(chuHo.getHoTen());
+            inpNgaySinh.setText((chuHo.getNgaySinh()).toString());
+            inpSoCmtCccd.setText(Integer.toString (chuHo.getSoCMT_CCCD()));
         }
     }
 
@@ -120,7 +141,7 @@ public class ThemHoKhauController implements Initializable {
                     alert.setTitle("Lỗi");
                     alert.setContentText("Sửa lại");
                     alert.setHeaderText("Nhan khau nay dang la thanh vien cua 1 ho khac");
-                    alert.show();
+                    alert.showAndWait();
                     return;
                 }
             }
@@ -130,9 +151,25 @@ public class ThemHoKhauController implements Initializable {
                     alert.setTitle("Lỗi");
                     alert.setContentText("Sửa lại");
                     alert.setHeaderText("Nhan khau nay dang la chu ho cua 1 ho khac");
-                    alert.show();
+                    alert.showAndWait();
                     return;
                 }
+            }
+            for(ThanhVien tv : listThanhVien) {
+                if(nhanKhauChon.getID() == tv.getIdNhanKhau()) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setContentText("Bạn đã chọn nhân khẩu này trước đó.");
+                    alert.showAndWait();
+                    return;
+                }
+            }
+            if(nhanKhauChon.getID() == chuHo.getID()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Nhân khẩu này đang được chọn làm chủ hộ");
+                alert.showAndWait();
+                return;
             }
             FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("QHeVoiChuHo.fxml"));
             Parent parent2 = fxmlLoader2.load();
@@ -160,16 +197,16 @@ public class ThemHoKhauController implements Initializable {
             hoKhauMoi.setMaHoKhau(inpMaHoKhau.getText());
             hoKhauMoi.setMaKhuVuc(inpMaKhuVuc.getText());
             hoKhauMoi.setDiaChi(inpDiaChi.getText());
-            hoKhauMoi.setChuHo(nhanKhauchon);
+            hoKhauMoi.setChuHo(chuHo);
             hoKhauMoi.setNgayLap(new java.sql.Date(System.currentTimeMillis()));
-            hoKhauMoi.setIdChuHo(nhanKhauchon.getID());
+            hoKhauMoi.setIdChuHo(chuHo.getID());
 
         }catch (Exception exception){
             Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Lỗi");
             alert.setContentText("Sửa lại");
             alert.setHeaderText(exception.getMessage());
-            alert.show();
+            alert.showAndWait();
             return;
         }
         new HoKhauDAO().insert(hoKhauMoi);
