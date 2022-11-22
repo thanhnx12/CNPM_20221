@@ -4,6 +4,22 @@ public class Users {
     private int ID;
     private String userName;
     private String password;
+    private boolean loginState;
+
+    public boolean isLoginState() {
+        return loginState;
+    }
+
+    public void setLoginState(boolean loginState) {
+        this.loginState = loginState;
+    }
+
+    public Users(int ID, String userName, String password, boolean loginState) {
+        this.ID = ID;
+        this.userName = userName;
+        this.password = password;
+        this.loginState = loginState;
+    }
 
     public Users() {
         this.setID(1);

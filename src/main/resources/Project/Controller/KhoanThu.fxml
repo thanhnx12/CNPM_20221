@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="762.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.KhoanThuController">
+   <children>
+      <TableView fx:id="tableView" layoutX="171.0" layoutY="161.0" prefHeight="537.0" prefWidth="579.0">
+        <columns>
+          <TableColumn fx:id="colTenKhoanThu" prefWidth="109.59996032714844" text="Tên khoản thu" />
+          <TableColumn fx:id="colSoTien" minWidth="0.0" prefWidth="110.4000244140625" text="Số tiền" />
+            <TableColumn fx:id="colKieuThu" prefWidth="135.99993896484375" text="Kiểu Thu" />
+            <TableColumn fx:id="colLoaiKhoanThu" prefWidth="109.5999755859375" text="Loại khoản thu" />
+            <TableColumn fx:id="colHanNop" prefWidth="109.5999755859375" text="Hạn nộp" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnThem" layoutX="818.0" layoutY="165.0" mnemonicParsing="false" onAction="#actThem" prefHeight="36.0" prefWidth="112.0" text="Thêm khoản thu" />
+      <Button fx:id="btnSua" layoutX="816.0" layoutY="238.0" mnemonicParsing="false" onAction="#actSua" prefHeight="34.0" prefWidth="115.0" text="Sửa khoản thu" />
+      <Button fx:id="btnXoa" layoutX="817.0" layoutY="307.0" mnemonicParsing="false" onAction="#actXoa" prefHeight="35.0" prefWidth="117.0" text="Xóa khoản thu" />
+      <TextField fx:id="txtSearch" layoutX="171.0" layoutY="116.0" onAction="#actSearch" prefHeight="26.0" prefWidth="346.0" promptText="Tìm kiếm" />
+   </children>
+</AnchorPane>

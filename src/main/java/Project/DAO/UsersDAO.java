@@ -17,12 +17,13 @@ public class UsersDAO implements DAO<Users>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="INSERT INTO users(ID,username,password)"
-                    +" VALUES(?,?,?)";
+            String sql="INSERT INTO users(ID,username,password,loginState)"
+                    +" VALUES(?,?,?,?)";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getID());
             st.setString(2,o.getUserName());
             st.setString(3,o.getPassword());
+            st.setBoolean(4,o.isLoginState());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -38,12 +39,13 @@ public class UsersDAO implements DAO<Users>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE users "+"SET username = ?,password = ? "
+            String sql="UPDATE users "+"SET username = ?,password = ? ,loginState = ?"
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setString(1,o.getUserName());
             st.setString(2,o.getPassword());
-            st.setInt(3,o.getID());
+            st.setBoolean(3,o.isLoginState());
+            st.setInt(4,o.getID());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -102,6 +104,7 @@ public class UsersDAO implements DAO<Users>{
                 o.setID(rs.getInt("ID"));
                 o.setUserName(rs.getString("username"));
                 o.setPassword(rs.getString("password"));
+                o.setLoginState(rs.getBoolean("loginState"));
                 ans.add(o);
             }
             JDBCUtil.closeConnection(con);

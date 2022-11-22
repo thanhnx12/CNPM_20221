@@ -41,7 +41,7 @@ CREATE TABLE `tam_vang` (
 
 LOCK TABLES `tam_vang` WRITE;
 /*!40000 ALTER TABLE `tam_vang` DISABLE KEYS */;
-INSERT INTO `tam_vang` VALUES (1,3,'awefa','2022-11-09','2022-11-18','awefawef');
+INSERT INTO `tam_vang` VALUES (1,3,'awefa','2022-11-09','2022-11-18','awefawef'),(2,1,'123123123','2022-11-01','2022-11-17','awefawefaf');
 /*!40000 ALTER TABLE `tam_vang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 21:12:53
+-- Dump completed on 2022-11-22 21:05:26

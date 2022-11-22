@@ -43,7 +43,7 @@ CREATE TABLE `tam_tru` (
 
 LOCK TABLES `tam_tru` WRITE;
 /*!40000 ALTER TABLE `tam_tru` DISABLE KEYS */;
-INSERT INTO `tam_tru` VALUES (1,2,'1111','ababab','2022-11-09','2022-11-10','ádfsdf','gà');
+INSERT INTO `tam_tru` VALUES (1,2,'1111','ababab','2022-11-09','2022-11-10','ádfsdf','gà'),(2,4,'123123','asdfasdf','2022-11-01','2022-11-17','hahaha','Hai');
 /*!40000 ALTER TABLE `tam_tru` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 21:12:53
+-- Dump completed on 2022-11-22 21:05:26

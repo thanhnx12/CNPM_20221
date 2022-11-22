@@ -26,6 +26,9 @@ CREATE TABLE `phi` (
   `id` int NOT NULL,
   `tenLoaiPhi` varchar(100) NOT NULL,
   `tuNguyen` tinyint(1) NOT NULL,
+  `soTien` double DEFAULT NULL,
+  `thuTheoHo` tinyint DEFAULT NULL,
+  `hanNop` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,7 +39,7 @@ CREATE TABLE `phi` (
 
 LOCK TABLES `phi` WRITE;
 /*!40000 ALTER TABLE `phi` DISABLE KEYS */;
-INSERT INTO `phi` VALUES (1,'hahaha',1),(2,'hehehe',0);
+INSERT INTO `phi` VALUES (1,'hahaha',1,0,1,'2022-05-05 00:00:00'),(2,'hehehe',0,6000,0,'2022-06-06 00:00:00');
 /*!40000 ALTER TABLE `phi` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 21:12:53
+-- Dump completed on 2022-11-22 21:05:26

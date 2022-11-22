@@ -39,6 +39,7 @@ CREATE TABLE `thanh_vien_cua_ho` (
 
 LOCK TABLES `thanh_vien_cua_ho` WRITE;
 /*!40000 ALTER TABLE `thanh_vien_cua_ho` DISABLE KEYS */;
+INSERT INTO `thanh_vien_cua_ho` VALUES (3,0,'Bo');
 /*!40000 ALTER TABLE `thanh_vien_cua_ho` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 21:12:53
+-- Dump completed on 2022-11-22 21:05:26

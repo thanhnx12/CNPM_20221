@@ -57,7 +57,7 @@ CREATE TABLE `nhan_khau` (
 
 LOCK TABLES `nhan_khau` WRITE;
 /*!40000 ALTER TABLE `nhan_khau` DISABLE KEYS */;
-INSERT INTO `nhan_khau` VALUES (1,132123,'Ngoc','2022-11-15','Nữ','ăefawef','hahaah','ahahah','ádf','1231','àdadsf','ádf','ádf','gay','2022-11-02',1,NULL,1,NULL,'06515'),(2,0,'gà',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ababab',NULL,'Tam tru',NULL,1,NULL,1,NULL,'029595'),(3,123123,'Thanh','2022-11-15','awef','awfeawef','awefawef','awefawef','awef','123','afwefawe','awef','awef','Tam vang','2022-11-02',1,NULL,1,NULL,'891');
+INSERT INTO `nhan_khau` VALUES (1,132123,'Khanh','2022-11-15','Nữ','plplplpl','hahaah','ahahah','ádf','1231','àdadsf','ádf','ádf','Tam vang','2022-11-09',1,NULL,1,NULL,'06515'),(2,0,'gà',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'ababab',NULL,'Tam tru',NULL,1,NULL,1,NULL,'029595'),(3,123123,'Thanh','2022-11-15','awef','awfeawef','awefawef','awefawef','awef','123','afwefawe','awef','awef','Tam vang','2022-11-02',1,NULL,1,NULL,'891'),(4,0,'Hai',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'asdfasdf',NULL,'Tam tru',NULL,1,NULL,1,NULL,'123123');
 /*!40000 ALTER TABLE `nhan_khau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 21:12:53
+-- Dump completed on 2022-11-22 21:05:26

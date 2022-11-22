@@ -2,20 +2,29 @@ package Project.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class TaskBarController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class TaskBarController implements Initializable {
 
     @FXML
     private Button HoKhau;
 
     @FXML
+    private Button KhoanThu;
+
+    @FXML
     private Button NhanKhau;
 
     @FXML
-    private Button QuanLyThu;
+    private Button NopTien;
 
     @FXML
     private Button TrangChu;
@@ -28,17 +37,46 @@ public class TaskBarController {
 
     @FXML
     void aHoKhau(ActionEvent event) {
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("HoKhau.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 
+    @FXML
+    void aKhoanThu(ActionEvent event) {
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("KhoanThu.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
     void aNhanKhau(ActionEvent event) {
-
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("NhanKhauView.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
-    void aQuanLyThu(ActionEvent event) {
-
+    void aNopTien(ActionEvent event) {
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("NopTien.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
@@ -46,4 +84,8 @@ public class TaskBarController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

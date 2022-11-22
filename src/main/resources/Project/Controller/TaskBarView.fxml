@@ -11,7 +11,8 @@
             <Button fx:id="TrangChu" mnemonicParsing="false" onAction="#aTrangChu" prefHeight="26.0" prefWidth="77.0" text="Trang chủ" />
             <Button fx:id="NhanKhau" mnemonicParsing="false" onAction="#aNhanKhau" text="Nhân khẩu" />
             <Button fx:id="HoKhau" mnemonicParsing="false" onAction="#aHoKhau" prefHeight="26.0" prefWidth="76.0" text="Hộ khẩu" />
-            <Button fx:id="QuanLyThu" mnemonicParsing="false" onAction="#aQuanLyThu" text="Quản lý thu" />
+            <Button fx:id="KhoanThu" mnemonicParsing="false" onAction="#aKhoanThu" text="Khoản thu" />
+            <Button fx:id="NopTien" mnemonicParsing="false" onAction="#aNopTien" prefHeight="26.0" prefWidth="72.0" text="Nộp Tiền" />
          </children>
       </VBox>
       <AnchorPane fx:id="anchorPane" layoutX="167.0" layoutY="-1.0" prefHeight="762.0" prefWidth="1049.0" />

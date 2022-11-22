@@ -144,7 +144,7 @@ public class NhanKhauController implements Initializable {
     void actDSTamTru(ActionEvent event) {
         ObservableList<NhanKhau> dataTamTru = FXCollections.observableArrayList();
         for(NhanKhau x : NhanKhauManager.nhanKhauList){
-            if(x.getGhiChu().equals("Tạm trú")){
+            if(x.getGhiChu().equals("Tam tru")){
                 dataTamTru.add(x);
             }
         }
@@ -155,7 +155,7 @@ public class NhanKhauController implements Initializable {
     void actDSTamVang(ActionEvent event) {
         ObservableList<NhanKhau> dataTamVang = FXCollections.observableArrayList();
         for(NhanKhau x : NhanKhauManager.nhanKhauList){
-            if(x.getGhiChu().equals("Tạm vắng")){
+            if(x.getGhiChu().equals("Tam vang")){
                 dataTamVang.add(x);
             }
         }
