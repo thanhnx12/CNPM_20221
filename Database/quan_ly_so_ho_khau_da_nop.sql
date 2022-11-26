@@ -27,7 +27,6 @@ CREATE TABLE `da_nop` (
   `idPhi` int NOT NULL,
   `idHoKhau` int NOT NULL,
   `soTien` double NOT NULL,
-  `canNop` double DEFAULT NULL,
   `ngayNop` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idPhi` (`idPhi`,`idHoKhau`),
@@ -43,7 +42,7 @@ CREATE TABLE `da_nop` (
 
 LOCK TABLES `da_nop` WRITE;
 /*!40000 ALTER TABLE `da_nop` DISABLE KEYS */;
-INSERT INTO `da_nop` VALUES (1,1,0,1000,2000,'2022-05-05 00:00:00');
+INSERT INTO `da_nop` VALUES (1,1,0,1000,'2022-05-05 00:00:00'),(2,2,0,6000,'2022-11-26 00:00:00'),(3,2,0,6000,'2022-11-26 00:00:00'),(4,2,0,6000,'2022-11-26 00:00:00');
 /*!40000 ALTER TABLE `da_nop` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22 21:05:26
+-- Dump completed on 2022-11-26 20:54:50
