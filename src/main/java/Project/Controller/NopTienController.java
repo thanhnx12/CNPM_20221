@@ -13,13 +13,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -64,7 +69,27 @@ public class NopTienController implements Initializable {
     void actSearch(ActionEvent event) {
 
     }
+    @FXML
+    void actSua(ActionEvent event) {
 
+    }
+
+    @FXML
+    void actThem(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader(KhoanThuController.class.getResource("ThemNopTien.fxml"));
+        Parent parent = fxmlLoader.load();
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Nộp tiền");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        readDataFromDB();
+    }
+
+    @FXML
+    void actXoa(ActionEvent event) {
+
+    }
     public void setCellTable(){
         colChuHo.setCellValueFactory(cellData->{
             int idHoKhau = cellData.getValue().getIdHoKhau();
@@ -90,7 +115,6 @@ public class NopTienController implements Initializable {
             else res = "Bắt buộc";
             return new ReadOnlyStringWrapper(res);
         });
-        colCanNop.setCellValueFactory(new PropertyValueFactory<>("canNop"));
         colDaNop.setCellValueFactory(new PropertyValueFactory<>("soTien"));
         colNgayNop.setCellValueFactory(new PropertyValueFactory<>("ngayNop"));
     }

@@ -6,22 +6,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="762.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NopTienController">
    <children>
       <TableView fx:id="tableView" layoutX="83.0" layoutY="119.0" prefHeight="524.0" prefWidth="809.0">
         <columns>
           <TableColumn fx:id="colChuHo" prefWidth="97.59996032714844" text="Tên chủ hộ nộp" />
           <TableColumn fx:id="colKhoanThu" prefWidth="129.60000610351562" text="Tên khoản thu" />
-            <TableColumn fx:id="colLoaiKhoanThu" prefWidth="100.0" text="Loại khoản thu" />
-            <TableColumn fx:id="colCanNop" prefWidth="148.79998779296875" text="Cần nộp" />
-            <TableColumn fx:id="colDaNop" prefWidth="168.79998779296875" text="Đã nộp" />
-            <TableColumn fx:id="colNgayNop" prefWidth="164.80010986328125" text="Ngày nộp" />
+            <TableColumn fx:id="colLoaiKhoanThu" prefWidth="148.0" text="Loại khoản thu" />
+            <TableColumn fx:id="colDaNop" prefWidth="202.4000244140625" text="Đã nộp" />
+            <TableColumn fx:id="colNgayNop" prefWidth="232.0" text="Ngày nộp" />
         </columns>
       </TableView>
-      <Button fx:id="btnThem" layoutX="915.0" layoutY="159.0" mnemonicParsing="false" text="Thêm mới" />
-      <Button fx:id="btnSua" layoutX="915.0" layoutY="212.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Sửa" />
+      <Button fx:id="btnThem" layoutX="915.0" layoutY="159.0" mnemonicParsing="false" onAction="#actThem" text="Thêm mới" />
+      <Button fx:id="btnSua" layoutX="915.0" layoutY="212.0" mnemonicParsing="false" onAction="#actSua" prefHeight="26.0" prefWidth="70.0" text="Sửa" />
       <TextField fx:id="txtSearch" layoutX="83.0" layoutY="72.0" onAction="#actSearch" prefHeight="26.0" prefWidth="292.0" promptText="Tìm kiếm" />
-      <Button fx:id="btnXoa" layoutX="915.0" layoutY="268.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Xóa" />
+      <Button fx:id="btnXoa" layoutX="915.0" layoutY="268.0" mnemonicParsing="false" onAction="#actXoa" prefHeight="26.0" prefWidth="70.0" text="Xóa" />
    </children>
 </AnchorPane>

@@ -6,30 +6,22 @@ public class DaNop {
     private int ID;
     private int idPhi;
     private int idHoKhau;
-    private double canNop;
     private Date ngayNop;
     private double soTien;
 
-    public DaNop(int ID, int idPhi, int idHoKhau, double canNop, Date ngayNop, double soTien) {
+    public DaNop(int ID, int idPhi, int idHoKhau, Date ngayNop, double soTien) {
         this.ID = ID;
         this.idPhi = idPhi;
         this.idHoKhau = idHoKhau;
-        this.canNop = canNop;
         this.ngayNop = ngayNop;
         this.soTien = soTien;
-    }
-
-    public double getCanNop() {
-        return canNop;
     }
 
     public Date getNgayNop() {
         return ngayNop;
     }
 
-    public void setCanNop(double canNop) {
-        this.canNop = canNop;
-    }
+
 
     public void setNgayNop(Date ngayNop) {
         this.ngayNop = ngayNop;

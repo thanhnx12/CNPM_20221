@@ -17,14 +17,13 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="INSERT INTO da_nop(ID,idPhi,idHoKhau,soTien,canNop,ngayNop)"
+            String sql="INSERT INTO da_nop(ID,idPhi,idHoKhau,soTien,ngayNop)"
                     +" VALUES(?,?,?,?,?)";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getID());
             st.setInt(2,o.getIdPhi());
             st.setInt(3,o.getIdHoKhau());
             st.setDouble(4,o.getSoTien());
-            st.setDouble(5,o.getCanNop());
             st.setDate(5,o.getNgayNop());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
@@ -41,15 +40,14 @@ public class DaNopDAO implements DAO<DaNop>{
         int ans=0;
         try{
             Connection con= JDBCUtil.getConnection();
-            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ? ,canNop = ?, ngayNop = ?"
+            String sql="UPDATE da_nop "+"SET idPhi = ?,idHoKhau = ?, soTien = ? , ngayNop = ?"
                     +"WHERE ID = ?";
             PreparedStatement st=con.prepareStatement(sql);
             st.setInt(1,o.getIdPhi());
             st.setInt(2,o.getIdHoKhau());
             st.setDouble(3,o.getSoTien());
-            st.setDouble(4,o.getCanNop());
-            st.setDate(5,o.getNgayNop());
-            st.setInt(6,o.getID());
+            st.setDate(4,o.getNgayNop());
+            st.setInt(5,o.getID());
             ans=st.executeUpdate();
             System.out.println("Bạn đã thực thi: "+sql);
             System.out.println("Có "+ans+" dòng bị thay đổi");
@@ -109,7 +107,6 @@ public class DaNopDAO implements DAO<DaNop>{
                 o.setIdHoKhau(rs.getInt("idHoKhau"));
                 o.setIdPhi(rs.getInt("idPhi"));
                 o.setSoTien(rs.getDouble("soTien"));
-                o.setCanNop(rs.getDouble("canNop"));
                 o.setNgayNop(rs.getDate("ngayNop"));
                 ans.add(o);
             }

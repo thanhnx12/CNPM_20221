@@ -119,7 +119,22 @@ public class HoKhauDAO implements DAO<HoKhau> {
         }
         return ans;
     }
-
+    public int soThanhVien(HoKhau o){
+        int ans=0;
+        try{
+            Connection con= JDBCUtil.getConnection();
+            String sql="SELECT COUNT(*) as SL_THANHVIEN FROM thanh_vien_cua_ho WHERE idHoKhau = ?";
+            PreparedStatement st=con.prepareStatement(sql);
+            st.setInt(1,o.getID());
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                ans = rs.getInt("SL_THANHVIEN");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return ans ;
+    }
 //    public static void main(String[] args) {
 //        HoKhauDAO hoKhauDAO = new HoKhauDAO();
 //        System.out.println(hoKhauDAO.getNewID());
