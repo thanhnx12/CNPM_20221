@@ -87,6 +87,18 @@ public class TachHoKhauController implements Initializable{
 
     public void chonChuHoMoi(ActionEvent event) {
         ThanhVien tvChon = hoKhauMoiTable.getSelectionModel().getSelectedItem();
+        try{
+            if(tvChon == null){
+                throw new Exception("Bạn chưa chọn chủ hộ mới");
+            }
+        }catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Lỗi");
+            alert.setContentText("Bạn chưa chọn chủ hộ mới");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+            return;
+        }
         if(tvChuHoMoi != null) {
             thanhVienMoiList.add(tvChuHoMoi);
             hoKhauMoiTable.getItems().add(tvChuHoMoi);
