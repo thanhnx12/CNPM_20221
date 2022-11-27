@@ -205,8 +205,5 @@ public class SuaNhanKhauController implements Initializable {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
-
-
     }
 }
