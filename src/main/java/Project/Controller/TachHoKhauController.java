@@ -99,10 +99,7 @@ public class TachHoKhauController implements Initializable{
             alert.show();
             return;
         }
-        if(tvChuHoMoi != null) {
-            thanhVienMoiList.add(tvChuHoMoi);
-            hoKhauMoiTable.getItems().add(tvChuHoMoi);
-        }
+        if(tvChuHoMoi != null) thanhVienMoiList.add(tvChuHoMoi);
         tvChuHoMoi = tvChon;
         thanhVienMoiList.remove(tvChon);
         for(NhanKhau nk : NhanKhauManager.nhanKhauList) {
