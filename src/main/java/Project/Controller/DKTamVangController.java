@@ -73,24 +73,15 @@ public class DKTamVangController {
                     alert.close();
                 }
             } else {
+                nhanKhau = editNktoTV();
                 tamVang.setLyDo(txtLyDo.getText());
                 tamVang.setMaGiayTamVang(txtMaGiay.getText());
                 tamVang.setID(DataAccess.tamVangDAO.getNewID());
                 tamVang.setTuNgay(java.sql.Date.valueOf(dateTuNgay.getValue()));
                 tamVang.setDenNgay(java.sql.Date.valueOf(dateDenNgay.getValue()));
-                //tamVang.setIdNhanKhau(DataAccess.nhanKhauDAO.getNewID());
+                tamVang.setIdNhanKhau(nhanKhau.getID());
+                DataAccess.tamVangDAO.insert(tamVang);
                 TamVangManager.List.add(tamVang);
-                nhanKhau = editNktoTV();
-                if(nhanKhau != null){
-                    tamVang.setIdNhanKhau(nhanKhau.getID());
-                    DataAccess.tamVangDAO.insert(tamVang);
-                }
-
-//                nhanKhau.setDiaChiHienTai("NULL");
-//                nhanKhau.setHoTen("NULL");
-//                nhanKhau.setDienThoai("NULL");
-//                nhanKhau.setID(tamVang.getIdNhanKhau());
-//                nhanKhau.setGhiChu("Tạm vắng");
 
                 Stage stage = (Stage) btnXacNhan.getScene().getWindow();
                 stage.close();
