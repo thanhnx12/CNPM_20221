@@ -32,7 +32,9 @@ public class Main extends Application {
     public static void main(String[] args) {
         NhanKhauDAO nhanKhauDAO = new NhanKhauDAO();
         TamTruDAO tamTruDAO = new TamTruDAO();
+        TamVangDAO tamVangDAO = new TamVangDAO();
         TamTruManager.List = tamTruDAO.selectAll();
+        TamVangManager.List = tamVangDAO.selectAll();
         NhanKhauManager.nhanKhauList = nhanKhauDAO.selectAll();
         HoKhauManager.List =new HoKhauDAO().selectAll();
         NhanKhauManager.nhanKhauList = new NhanKhauDAO().selectAll();
