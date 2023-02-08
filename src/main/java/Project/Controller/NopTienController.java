@@ -1,6 +1,8 @@
 package Project.Controller;
 
+import Project.DAO.DaNopDAO;
 import Project.DAO.DataAccess;
+import Project.DAO.NhanKhauDAO;
 import Project.Manager.HoKhauManager;
 import Project.Manager.NhanKhauManager;
 import Project.Manager.PhiManager;
@@ -11,16 +13,15 @@ import Project.Model.Phi;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -28,6 +29,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class NopTienController implements Initializable {
@@ -65,9 +67,27 @@ public class NopTienController implements Initializable {
     @FXML
     private TextField txtSearch;
     ObservableList<DaNop> data = FXCollections.observableArrayList();
+    NhanKhauDAO nhanKhauDAO = new NhanKhauDAO();
+    PhiManager phiManager = new PhiManager();
+
     @FXML
     void actSearch(ActionEvent event) {
+        FilteredList<DaNop> filteredData = new FilteredList<>(data, b->true);
 
+        txtSearch.textProperty().addListener(((observableValue, oldValue, newValue) -> {
+            filteredData.setPredicate(DaNop->{
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if((phiManager.get(DaNop.getIdPhi())+"").toLowerCase().indexOf(lowerCaseFilter) != -1){
+                    return true;
+                }else return false;
+            });
+        }));
+        SortedList<DaNop> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tableView.comparatorProperty());
+        tableView.setItems(sortedData);
     }
     @FXML
     void actSua(ActionEvent event) {
@@ -88,7 +108,31 @@ public class NopTienController implements Initializable {
 
     @FXML
     void actXoa(ActionEvent event) {
+        try{
+            DaNop daNop = tableView.getSelectionModel().getSelectedItem();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Thông báo");
+            alert.setContentText("Bạn có chắc chắn muốn xóa ?");
+            ButtonType isOK = new ButtonType("OK");
+            alert.getButtonTypes().setAll(isOK);
+            Optional<ButtonType> Result = alert.showAndWait();
+            if (Result.get() == isOK) {
+                alert.close();
+                new DaNopDAO().delete(daNop);
+                readDataFromDB();
+            }
 
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Thông báo");
+            alert.setContentText("Có lỗi xảy ra !");
+            ButtonType isOK = new ButtonType("OK");
+            alert.getButtonTypes().setAll(isOK);
+            Optional<ButtonType> Result = alert.showAndWait();
+            if (Result.get() == isOK) {
+                alert.close();
+            }
+        }
     }
     public void setCellTable(){
         colChuHo.setCellValueFactory(cellData->{

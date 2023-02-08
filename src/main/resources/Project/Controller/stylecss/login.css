@@ -1,0 +1,12 @@
+.button {
+    -fx-background-color:  #4B32A9
+}
+
+.quanly {
+    -fx-background-color: #4B32A9
+}
+
+.button:hover {
+     -fx-background-color: #5272CD
+}
+

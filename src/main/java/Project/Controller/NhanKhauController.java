@@ -55,6 +55,9 @@ public class NhanKhauController implements Initializable {
     private Button btnThemMoi;
 
     @FXML
+    private Button btnTimKiem;
+
+    @FXML
     private TableColumn<NhanKhau, String> cDiaChi;
 
     @FXML
@@ -163,8 +166,15 @@ public class NhanKhauController implements Initializable {
     }
 
     @FXML
-    void actKhaiTu(ActionEvent event) {
-
+    void actKhaiTu(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader(NhanKhauController.class.getResource("KhaiTuView.fxml"));
+        Parent parent = fxmlLoader.load();
+        Stage stage1 = new Stage();
+        Scene scene1 = new Scene(parent);
+        stage1.setTitle("Khai Tu");
+        stage1.setScene(scene1);
+        stage1.showAndWait();
+        readDataFromDB();
     }
 
     @FXML

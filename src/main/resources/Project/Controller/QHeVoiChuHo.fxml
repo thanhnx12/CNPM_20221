@@ -6,16 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="342.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.QHeVoiChuHo">
+<AnchorPane prefHeight="300.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.QHeVoiChuHo">
    <children>
-      <Label alignment="CENTER" layoutX="156.0" layoutY="84.0" prefHeight="86.0" prefWidth="286.0" text="Quan hệ của nhân khẩu với chủ hộ là" textAlignment="CENTER" wrapText="true">
+      <Label alignment="CENTER" layoutY="84.0" prefHeight="80.0" prefWidth="580.0" text="Quan Hệ Của Nhân Khẩu Với Chủ Hộ" textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="20.0">
          <font>
-            <Font size="16.0" />
+            <Font size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="inpQhe" layoutX="164.0" layoutY="158.0" prefHeight="26.0" prefWidth="268.0" />
-      <Button fx:id="btnXacNhan" layoutX="380.0" layoutY="211.0" mnemonicParsing="false" onAction="#xacnhan" text="Xác nhận" />
-      <Button fx:id="btnHuy" layoutX="298.0" layoutY="211.0" mnemonicParsing="false" onAction="#huy" prefHeight="26.0" prefWidth="65.0" text="Hủy" />
+      <TextField fx:id="inpQhe" alignment="CENTER" layoutX="164.0" layoutY="158.0" prefHeight="30.0" prefWidth="300.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="btnXacNhan" layoutX="380.0" layoutY="211.0" mnemonicParsing="false" onAction="#xacnhan" prefHeight="50.0" prefWidth="140.0" text="Xác nhận" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="180.0" />
+      <Button fx:id="btnHuy" layoutX="298.0" layoutY="211.0" mnemonicParsing="false" onAction="#huy" prefHeight="50.0" prefWidth="140.0" text="Hủy" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="180.0" />
    </children>
 </AnchorPane>
