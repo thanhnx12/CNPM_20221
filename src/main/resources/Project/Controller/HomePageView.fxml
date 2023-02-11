@@ -5,29 +5,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HomePageController">
+<AnchorPane prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HomePageController">
    <children>
-      <Pane layoutY="37.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+      <Pane layoutY="225.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0">
          <children>
-            <Text fx:id="soNhanKhau" layoutX="100.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Nhân Khẩu : ">
+            <Text fx:id="soNhanKhau" layoutX="98.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Nhân Khẩu : ">
                <font>
                   <Font size="48.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="2.0" layoutY="266.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="290.0">
+      <Pane layoutY="375.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="375.0">
          <children>
-            <Text fx:id="soHoKhau" layoutX="100.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Hộ Khẩu :">
+            <Text fx:id="soHoKhau" layoutX="100.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Hộ Khẩu :">
                <font>
                   <Font size="48.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="4.0" layoutY="459.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.topAnchor="510.0">
+      <Pane layoutX="2.0" layoutY="476.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.topAnchor="476.0">
          <children>
-            <Text fx:id="soKhoanThu" layoutX="100.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Khoản thu :">
+            <Text fx:id="soKhoanThu" layoutX="93.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Khoản thu :">
                <font>
                   <Font size="48.0" />
                </font>

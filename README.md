@@ -1,2 +1,2 @@
 # CNPM_20221
-# Hướng dẫn sử dụng nắm trong file : Nhom9-QuanLyThuPhi.docx
+# Hướng dẫn sử dụng nằm trong file : Nhom9-QuanLyThuPhi.docx
