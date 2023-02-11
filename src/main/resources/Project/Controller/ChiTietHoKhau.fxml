@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.ChiTietHoKhau">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.ChiTietHoKhau">
    <children>
       <Label alignment="CENTER" layoutY="43.0" prefHeight="80.0" prefWidth="800.0" text="Chi Tiết Hộ Khẩu" textAlignment="CENTER" AnchorPane.topAnchor="20.0">
          <font>
-            <Font size="29.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
       <Label layoutX="200.0" layoutY="149.0" text="Mã hộ khẩu" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="120.0">
@@ -74,6 +74,6 @@
             <TableColumn fx:id="colQuanHe" prefWidth="141.0" text="Quan hệ với chủ hộ" />
          </columns>
       </TableView>
-      <Button layoutX="334.0" layoutY="658.0" mnemonicParsing="false" onAction="#dong" prefHeight="50.0" prefWidth="140.0" text="Đóng" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="310.0" />
+      <Button layoutX="309.0" layoutY="580.0" mnemonicParsing="false" onAction="#dong" prefHeight="50.0" prefWidth="140.0" text="Đóng" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="309.0" />
    </children>
 </AnchorPane>
