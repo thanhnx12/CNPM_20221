@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NhanKhau.KhaiTuController">
+   <children>
+      <TextField fx:id="txtNguoiKhai" layoutX="150.0" layoutY="31.0" prefHeight="34.0" prefWidth="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="112.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txtNguoiMat" layoutX="301.0" layoutY="105.0" prefHeight="34.0" prefWidth="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="162.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="chonNguoiKhai" layoutX="170.0" layoutY="43.0" mnemonicParsing="false" onAction="#actChonNguoiKhai" prefHeight="34.0" prefWidth="100.0" text="Chọn" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="112.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="chonNguoiMat" layoutX="150.0" layoutY="91.0" mnemonicParsing="false" onAction="#actChonNguoiMat" prefHeight="34.0" prefWidth="100.0" text="Chọn" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="162.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Text layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Người khai" wrappingWidth="121.21708679199219" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="50.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Người mất" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="50.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="320.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txtLyDo" layoutX="171.0" layoutY="395.0" prefHeight="0.0" prefWidth="370.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="320.0" />
+      <DatePicker fx:id="dateNgayMat" layoutX="170.0" layoutY="147.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="220.0" />
+      <Text layoutX="50.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày mất" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="txtSo" layoutX="170.0" layoutY="198.0" prefHeight="26.0" prefWidth="187.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="270.0" />
+      <Text layoutX="50.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số giấy khai tử" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="270.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Label alignment="CENTER" layoutX="342.0" layoutY="56.0" prefHeight="80.0" prefWidth="800.0" text="Khai Tử" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnXacNhan" layoutX="259.0" layoutY="561.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="50.0" prefWidth="140.0" text="Xác Nhận" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="120.0" />
+      <Button fx:id="btnHuy" layoutX="540.0" layoutY="558.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="50.0" prefWidth="140.0" text="Huỷ" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="120.0" />
+   </children>
+</AnchorPane>

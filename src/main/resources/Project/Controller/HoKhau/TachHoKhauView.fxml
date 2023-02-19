@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HoKhau.TachHoKhauController">
+   <children>
+      <Label alignment="CENTER" layoutY="45.0" prefHeight="80.0" prefWidth="1000.0" text="Tách Hộ Khẩu" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="92.0" layoutY="154.0" prefHeight="30.0" prefWidth="380.0" text="Hộ khẩu ban đầu" textAlignment="CENTER" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="554.0" layoutY="154.0" prefHeight="30.0" prefWidth="380.0" text="Hộ khẩu mới" textAlignment="CENTER" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="235.0" text="Mã hộ khẩu:" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="36.0" layoutY="298.0" text="Chủ hộ:" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="411.0" layoutY="235.0" text="Mã hộ khẩu:" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="411.0" layoutY="303.0" text="Chủ hộ:" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="36.0" layoutY="387.0" text="Thành viên của hộ:" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="411.0" layoutY="387.0" text="Thành viên của hộ:" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TableView fx:id="hoKhauTable" layoutX="61.0" layoutY="340.0" prefHeight="200.0" prefWidth="303.0" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="559.0" AnchorPane.topAnchor="340.0">
+        <columns>
+          <TableColumn fx:id="hoTenCol" prefWidth="165.0" text="Họ và tên" />
+          <TableColumn fx:id="ngaySinhCol" prefWidth="100.0" text="Ngày sinh" />
+            <TableColumn fx:id="quanHeChuHoCol" prefWidth="114.0" text="Quan hệ với chủ hộ" />
+        </columns>
+      </TableView>
+      <TableView fx:id="hoKhauMoiTable" layoutX="411.0" layoutY="418.0" prefHeight="200.0" prefWidth="303.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="340.0">
+         <columns>
+            <TableColumn fx:id="hoTenMoiCol" prefWidth="161.21649169921875" text="Họ và tên" />
+            <TableColumn fx:id="ngaySinhMoiCol" prefWidth="99.78350830078125" text="Ngày sinh" />
+            <TableColumn fx:id="quanHeChuHoMoiCol" prefWidth="118.3048095703125" text="Quan hệ với chủ hộ" />
+         </columns>
+      </TableView>
+      <TextField fx:id="maHoKhauField" editable="false" layoutX="115.0" layoutY="231.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #C4C4C4;" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="560.0" AnchorPane.topAnchor="170.0" />
+      <TextField fx:id="chuHoField" editable="false" layoutX="161.0" layoutY="230.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #C4C4C4;" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="560.0" AnchorPane.topAnchor="220.0" />
+      <Button layoutX="629.0" layoutY="677.0" mnemonicParsing="false" onAction="#xacNhan" prefHeight="50.0" prefWidth="140.0" text="Xác nhận" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="670.0" layoutY="214.0" mnemonicParsing="false" onAction="#chonChuHoMoi" prefWidth="100.0" text="Chọn" AnchorPane.leftAnchor="670.0" AnchorPane.topAnchor="214.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="486.0" layoutY="677.0" mnemonicParsing="false" onAction="#huy" prefHeight="50.0" prefWidth="140.0" text="Hủy" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="359.0" layoutY="473.0" mnemonicParsing="false" onAction="#chuyenSangMoi" prefWidth="40.0" text="&gt;&gt;" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="400.0" />
+      <Button layoutX="359.0" layoutY="518.0" mnemonicParsing="false" onAction="#chuyenSangCu" prefWidth="40.0" text="&lt;&lt;" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="450.0" />
+      <TextField fx:id="chuHoMoiField" editable="false" layoutX="782.0" layoutY="220.0" prefHeight="30.0" prefWidth="157.0" style="-fx-background-color: #C4C4C4;" />
+      <TextField fx:id="maHoKhauMoiField" layoutX="670.0" layoutY="170.0" prefHeight="30.0" prefWidth="266.0" />
+   </children>
+</AnchorPane>

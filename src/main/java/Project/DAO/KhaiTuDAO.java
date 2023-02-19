@@ -23,13 +23,11 @@ public class KhaiTuDAO implements DAO<KhaiTu> {
             st.setInt(1,o.getID());
             st.setInt(2,o.getSoGiayKhaiTu());
             st.setInt(3,o.getIdNguoiKhai());
-            st.setDate(4,o.getNgayChet());
+            st.setInt(4,o.getIdNguoiChet());
             st.setDate(5,o.getNgayKhai());
             st.setDate(6,o.getNgayChet());
             st.setString(7,o.getLyDoChet());
             ans=st.executeUpdate();
-            System.out.println("Bạn đã thực thi: "+sql);
-            System.out.println("Có "+ans+" dòng bị thay đổi");
             JDBCUtil.closeConnection(con);
         } catch (SQLException ex){
             ex.printStackTrace();

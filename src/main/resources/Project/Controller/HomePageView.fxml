@@ -1,8 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="762.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HomePageController">
-
+<AnchorPane prefHeight="750.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HomePageController">
+   <children>
+      <Pane prefHeight="150.0" prefWidth="700.0" stylesheets="@stylecss/pane.css" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Text fx:id="soNhanKhau" fill="WHITE" layoutX="110.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Nhân Khẩu : ">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/users.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="pane" />
+            <String fx:value="border" />
+         </styleClass>
+      </Pane>
+      <Pane prefHeight="150.0" prefWidth="700.0" stylesheets="@stylecss/pane.css" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="290.0">
+         <children>
+            <Text fx:id="soHoKhau" fill="WHITE" layoutX="110.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Hộ Khẩu :">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/home.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="pane" />
+            <String fx:value="border" />
+         </styleClass>
+      </Pane>
+      <Pane prefHeight="150.0" prefWidth="700.0" styleClass="pane" stylesheets="@stylecss/pane.css" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="510.0">
+         <children>
+            <Text fx:id="soKhoanThu" fill="WHITE" layoutX="110.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số Khoản thu :">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/money.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

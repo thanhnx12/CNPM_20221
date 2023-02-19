@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HoKhau.HoKhauController">
+   <children>
+      <TableView fx:id="tableHoKhau" layoutX="60.0" layoutY="100.0" prefHeight="470.0" prefWidth="500.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="170.0">
+        <columns>
+          <TableColumn fx:id="colMaHoKhau" prefWidth="116.06250381469727" text="Mã Hộ Khẩu" />
+          <TableColumn fx:id="colChuHo" prefWidth="119.93745422363281" text="Chủ Hộ" />
+            <TableColumn fx:id="colSoDienThoai" prefWidth="135.199951171875" text="Số điện thoại" />
+            <TableColumn fx:id="colDiaChi" prefWidth="193.0" text="Địa chỉ" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnTatCa" layoutX="568.0" layoutY="100.0" mnemonicParsing="false" onAction="#tatCaHoKhau" prefHeight="50.0" prefWidth="140.0" text="Tất cả" textFill="WHITE" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnThemMoi" layoutX="635.0" layoutY="206.0" mnemonicParsing="false" onAction="#themMoiHoKhau" prefHeight="50.0" prefWidth="140.0" text="Thêm mới" textFill="WHITE" AnchorPane.bottomAnchor="394.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnTachHoKhau" layoutX="635.0" layoutY="292.0" mnemonicParsing="false" onAction="#tachHoKhau" prefHeight="50.0" prefWidth="140.0" text="Tách hộ khẩu" textFill="WHITE" AnchorPane.bottomAnchor="308.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnSuaHoKhau" layoutX="635.0" layoutY="377.0" mnemonicParsing="false" onAction="#suaHoKhau" prefHeight="50.0" prefWidth="140.0" text="Sửa hộ khẩu" textFill="WHITE" AnchorPane.bottomAnchor="223.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="inpTimKiem" layoutX="193.0" layoutY="44.0" onKeyPressed="#timKiem" prefHeight="35.0" prefWidth="432.0" promptText="Tìm Kiếm" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="btnChiTiet" layoutX="635.0" layoutY="463.0" mnemonicParsing="false" onAction="#chiTiet" prefHeight="50.0" prefWidth="140.0" text="Chi Tiết" textFill="WHITE" AnchorPane.bottomAnchor="137.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnXoa" layoutX="568.0" layoutY="520.0" mnemonicParsing="false" onAction="#xoaHoKhau" prefHeight="50.0" prefWidth="140.0" text="Xóa hộ khẩu" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="335.0" layoutY="32.0" prefHeight="80.0" prefWidth="800.0" text="Hộ Khẩu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

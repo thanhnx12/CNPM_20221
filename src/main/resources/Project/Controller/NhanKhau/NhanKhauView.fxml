@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.PerspectiveCamera?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NhanKhau.NhanKhauController">
+   <children>
+      <TableView fx:id="tableView" layoutX="20.0" layoutY="120.0" onMouseClicked="#clickAction" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="170.0">
+        <columns>
+          <TableColumn fx:id="cID" prefWidth="54.91167068481445" text="ID" />
+          <TableColumn fx:id="cHoVaTen" prefWidth="214.2508544921875" text="Họ và Tên" />
+            <TableColumn fx:id="cDienThoai" prefWidth="158.80392456054688" text="Điện Thoại" />
+            <TableColumn fx:id="cDiaChi" prefWidth="281.2894592285156" text="Địa Chỉ" />
+            <TableColumn fx:id="cGhiChu" prefWidth="200.21044921875" text="Ghi chú" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutY="63.0" onKeyPressed="#atxtSearch" prefHeight="35.0" prefWidth="500.0" promptText="Tìm Kiếm" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="btnTatCa" layoutX="900.0" layoutY="120.0" mnemonicParsing="false" onAction="#actTatCa" prefHeight="35.0" prefWidth="140.0" text="Tất cả" textFill="WHITE" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnThemMoi" layoutX="900.0" layoutY="200.0" mnemonicParsing="false" onAction="#actThemMoi" prefHeight="50.0" prefWidth="135.0" text="Thêm mới" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnDKTamVang" layoutX="900.0" layoutY="280.0" mnemonicParsing="false" onAction="#actDKTamVang" prefHeight="50.0" prefWidth="135.0" text="ĐK Tạm vắng" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="215.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnDKTamtru" layoutX="900.0" layoutY="360.0" mnemonicParsing="false" onAction="#actDKTamTru" prefHeight="50.0" prefWidth="135.0" text="ĐK Tạm trú" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="370.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnDSTamVang" layoutX="900.0" layoutY="440.0" mnemonicParsing="false" onAction="#actDSTamVang" prefHeight="50.0" prefWidth="135.0" text="DS Tạm vắng" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="525.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnDSTamTru" layoutX="900.0" layoutY="520.0" mnemonicParsing="false" onAction="#actDSTamTru" prefHeight="50.0" prefWidth="135.0" text="DS Tạm trú" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="680.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnKhaiTu" layoutX="900.0" layoutY="600.0" mnemonicParsing="false" onAction="#actKhaiTu" prefHeight="50.0" prefWidth="135.0" text="Khai tử" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <PerspectiveCamera />
+      <ParallelCamera />
+      <PointLight color="CHARTREUSE" lightOn="true" />
+      <PointLight color="CHARTREUSE" lightOn="true" />
+      <Label alignment="CENTER" layoutX="423.0" layoutY="66.0" prefHeight="80.0" prefWidth="800.0" text="Nhân Khẩu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

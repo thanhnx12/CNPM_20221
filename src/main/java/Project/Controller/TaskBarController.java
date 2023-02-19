@@ -39,7 +39,7 @@ public class TaskBarController implements Initializable {
     void aHoKhau(ActionEvent event) {
         try{
             anchorPane.getChildren().clear();
-            Parent rootChild = FXMLLoader.load(this.getClass().getResource("HoKhau.fxml"));
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("HoKhau/HoKhau.fxml"));
             anchorPane.getChildren().add(rootChild);
         } catch(Exception e){
             System.out.println(e.getMessage());
@@ -50,7 +50,7 @@ public class TaskBarController implements Initializable {
     void aKhoanThu(ActionEvent event) {
         try{
             anchorPane.getChildren().clear();
-            Parent rootChild = FXMLLoader.load(this.getClass().getResource("KhoanThu.fxml"));
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("Phi/KhoanThu.fxml"));
             anchorPane.getChildren().add(rootChild);
         } catch(Exception e){
             System.out.println(e.getMessage());
@@ -61,7 +61,7 @@ public class TaskBarController implements Initializable {
     void aNhanKhau(ActionEvent event) {
         try{
             anchorPane.getChildren().clear();
-            Parent rootChild = FXMLLoader.load(this.getClass().getResource("NhanKhauView.fxml"));
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("NhanKhau/NhanKhauView.fxml"));
             anchorPane.getChildren().add(rootChild);
         } catch(Exception e){
             System.out.println(e.getMessage());
@@ -72,7 +72,7 @@ public class TaskBarController implements Initializable {
     void aNopTien(ActionEvent event) {
         try{
             anchorPane.getChildren().clear();
-            Parent rootChild = FXMLLoader.load(this.getClass().getResource("NopTien.fxml"));
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("Phi/NopTien.fxml"));
             anchorPane.getChildren().add(rootChild);
         } catch(Exception e){
             System.out.println(e.getMessage());
@@ -81,11 +81,23 @@ public class TaskBarController implements Initializable {
 
     @FXML
     void aTrangChu(ActionEvent event) {
-
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("HomePageView.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        try{
+            anchorPane.getChildren().clear();
+            Parent rootChild = FXMLLoader.load(this.getClass().getResource("HomePageView.fxml"));
+            anchorPane.getChildren().add(rootChild);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

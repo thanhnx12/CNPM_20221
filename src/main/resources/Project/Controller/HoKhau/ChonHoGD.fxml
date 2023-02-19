@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HoKhau.ChonHoGDController">
+   <children>
+      <TableView fx:id="tableView" layoutX="60.0" layoutY="214.0" prefHeight="316.0" prefWidth="680.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="170.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="88.0000228881836" text="ID" />
+          <TableColumn fx:id="colTenChuHo" prefWidth="174.76824951171875" text="Tên chủ hộ" />
+            <TableColumn fx:id="colDiaChi" prefWidth="309.73175048828125" text="Địa chỉ" />
+            <TableColumn fx:id="colSoThanhVien" prefWidth="106.82659912109375" text="Số thành viên" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtTimKiem" layoutX="60.0" layoutY="50.0" onAction="#actTimKiem" prefHeight="26.0" prefWidth="330.0" promptText="Tìm kiếm" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="btnXacNhan" layoutX="530.0" layoutY="400.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="50.0" prefWidth="140.0" text="Xác nhận" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnHuy" layoutX="115.0" layoutY="400.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="50.0" prefWidth="140.0" text="Hủy" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="344.0" layoutY="6.0" prefHeight="80.0" prefWidth="800.0" text="Chọn Hộ Gia Đình" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

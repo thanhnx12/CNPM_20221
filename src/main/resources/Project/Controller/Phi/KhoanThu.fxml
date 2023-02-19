@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.Phi.KhoanThuController">
+   <children>
+      <TableView fx:id="tableView" layoutX="171.0" layoutY="161.0" prefHeight="537.0" prefWidth="579.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="170.0">
+        <columns>
+          <TableColumn fx:id="colTenKhoanThu" prefWidth="109.59996032714844" text="Tên khoản thu" />
+          <TableColumn fx:id="colSoTien" minWidth="0.0" prefWidth="110.4000244140625" text="Số tiền" />
+            <TableColumn fx:id="colKieuThu" prefWidth="135.99993896484375" text="Kiểu Thu" />
+            <TableColumn fx:id="colLoaiKhoanThu" prefWidth="169.58148193359375" text="Loại khoản thu" />
+            <TableColumn fx:id="colHanNop" prefWidth="152.91845703125" text="Hạn nộp" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnThem" layoutX="818.0" layoutY="165.0" mnemonicParsing="false" onAction="#actThem" prefHeight="50.0" prefWidth="159.0" text="Thêm khoản thu" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnSua" alignment="CENTER" contentDisplay="CENTER" layoutX="336.0" layoutY="545.0" mnemonicParsing="false" onAction="#actSua" prefHeight="50.0" prefWidth="150.0" text="Sửa khoản thu" textFill="WHITE" AnchorPane.bottomAnchor="50.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnXoa" layoutX="817.0" layoutY="307.0" mnemonicParsing="false" onAction="#actXoa" prefHeight="50.0" prefWidth="150.0" text="Xóa khoản thu" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="txtSearch" layoutX="171.0" layoutY="116.0" onKeyPressed="#actSearch" prefHeight="35.0" prefWidth="357.0" promptText="Tìm Kiếm" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="470.0" layoutY="48.0" prefHeight="80.0" prefWidth="800.0" text="Khoản Thu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

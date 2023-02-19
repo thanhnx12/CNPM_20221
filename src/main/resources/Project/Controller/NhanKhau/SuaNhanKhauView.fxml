@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NhanKhau.SuaNhanKhauController">
+   <children>
+      <Text layoutX="286.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sửa Thông Tin Nhân Khẩu" textAlignment="CENTER">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <TextField fx:id="hoVaTen" layoutX="186.0" layoutY="92.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="noiThuongTru" layoutX="186.0" layoutY="344.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="soCMT_CCCD" layoutX="186.0" layoutY="292.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="nguyenQuan" layoutX="186.0" layoutY="192.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="danToc" layoutX="186.0" layoutY="244.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="gioiTinh" layoutX="571.0" layoutY="91.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="quocTich" layoutX="571.0" layoutY="191.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="tonGiao" layoutX="571.0" layoutY="141.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="hoChieuSo" layoutX="571.0" layoutY="241.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="diaChiHienTai" layoutX="571.0" layoutY="294.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Text layoutX="60.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày sinh">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Giới tính" wrappingWidth="106.19226153460124">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nguyên quán">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tôn giáo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dân tộc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quốc tịch">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hộ chiếu số">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi thường trú">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ hiện tại">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nơi sinh">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="noiSinh" layoutX="186.0" layoutY="392.0" onAction="#txtNoiSinh" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Text layoutX="63.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ghi chú">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="ghiChu" layoutX="186.0" layoutY="444.0" prefHeight="72.0" prefWidth="584.0" />
+      <Button fx:id="huy" layoutX="630.0" layoutY="550.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="50.0" prefWidth="140.0" text="Hủy">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="345.0" layoutY="550.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="50.0" prefWidth="140.0" text="Xác nhận" fx:id="xacNhan">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="dienThoai" layoutX="571.0" layoutY="344.0" prefWidth="200.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Text layoutX="440.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dateNgaySinh" layoutX="186.0" layoutY="144.0" prefHeight="30.0" prefWidth="200.0" />
+      <Button fx:id="btnXoaNhanKhau" layoutX="60.0" layoutY="550.0" mnemonicParsing="false" onAction="#actXoaNhanKhau" prefHeight="50.0" prefWidth="140.0" text="Xóa nhân khẩu">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+   </children>
+</Pane>

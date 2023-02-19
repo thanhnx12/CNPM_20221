@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.HoKhau.SuaHoKhauController">
+   <children>
+      <Label alignment="CENTER" layoutY="37.0" prefHeight="80.0" prefWidth="800.0" text="Sửa Hộ Khẩu" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label layoutX="57.0" layoutY="135.0" text="Mã hộ khẩu:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="58.0" layoutY="178.0" text="Mã khu vực:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="58.0" layoutY="227.0" text="Địa chỉ:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="58.0" layoutY="278.0" prefHeight="17.0" prefWidth="64.0" text="Chủ hộ:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="270.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="58.0" layoutY="324.0" prefHeight="17.0" prefWidth="150.0" text="Ngày sinh chủ hộ:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="320.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="58.0" layoutY="370.0" prefHeight="17.0" prefWidth="150.0" text="Số CMT chủ hộ:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="370.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="60.0" layoutY="420.0" prefHeight="17.0" prefWidth="150.0" text="Thành viên của hộ:" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="420.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="maHoKhauField" editable="false" layoutX="255.0" layoutY="131.0" prefHeight="26.0" prefWidth="241.0" style="-fx-background-color: #C4C4C4;" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="112.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="maKhuVucField" layoutX="255.0" layoutY="174.0" prefHeight="26.0" prefWidth="241.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="162.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="diaChiField" layoutX="255.0" layoutY="223.0" prefHeight="26.0" prefWidth="241.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="212.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="chuHoField" editable="false" layoutX="255.0" layoutY="273.0" prefHeight="26.0" prefWidth="241.0" style="-fx-background-color: #C4C4C4;" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="262.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="cmtChuHoField" editable="false" layoutX="255.0" layoutY="366.0" prefHeight="26.0" prefWidth="241.0" style="-fx-background-color: #C4C4C4;" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="362.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button layoutX="403.0" layoutY="415.0" mnemonicParsing="false" onAction="#xoaThanhVien" prefHeight="30.0" prefWidth="140.0" text="Xóa" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="250.0" layoutY="415.0" mnemonicParsing="false" onAction="#themThanhVien" prefHeight="30.0" prefWidth="140.0" text="Thêm..." AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TableView fx:id="thanhVienTable" layoutX="123.0" layoutY="480.0" prefHeight="200.0" prefWidth="504.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="480.0">
+        <columns>
+          <TableColumn fx:id="tvHoTenColumn" prefWidth="225.0" text="Họ và tên" />
+          <TableColumn fx:id="tvNgaySinhColumn" prefWidth="184.82736206054688" text="Ngày sinh" />
+            <TableColumn fx:id="tvQuanHeChuHoColumn" minWidth="9.472503662109375" prefWidth="149.1727294921875" text="Quan hệ với chủ hộ" />
+        </columns>
+      </TableView>
+      <Button layoutX="534.0" layoutY="702.0" mnemonicParsing="false" onAction="#luu" prefHeight="50.0" prefWidth="140.0" text="Lưu" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="403.0" layoutY="702.0" mnemonicParsing="false" onAction="#huy" prefHeight="50.0" prefWidth="140.0" text="Hủy" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="134.0" layoutY="273.0" mnemonicParsing="false" onAction="#chonChuHo" prefHeight="26.0" prefWidth="120.0" text="Chọn..." AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="262.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="ngaySinhChuHoField" editable="false" layoutX="255.0" layoutY="320.0" prefHeight="26.0" prefWidth="241.0" style="-fx-background-color: #C4C4C4;" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="312.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+   </children>
+</AnchorPane>

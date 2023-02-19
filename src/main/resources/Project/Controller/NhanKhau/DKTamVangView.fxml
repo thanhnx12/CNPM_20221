@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.NhanKhau.DKTamVangController">
+   <children>
+      <TextField fx:id="txtCCCD" layoutX="197.0" layoutY="54.0" prefHeight="26.0" prefWidth="350.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="112.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txtMaGiay" layoutX="198.0" layoutY="111.0" prefHeight="26.0" prefWidth="350.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="162.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextArea fx:id="txtLyDo" layoutX="197.0" layoutY="301.0" prefHeight="200.0" prefWidth="350.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="320.0" />
+      <Text layoutX="59.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMT/CCCD" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="58.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Giấy Tạm Vắng" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="58.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="59.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày" AnchorPane.topAnchor="270.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="68.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lý do" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="320.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnHuy" layoutX="430.0" layoutY="473.0" mnemonicParsing="false" onAction="#actHuy" prefHeight="50.0" prefWidth="140.0" text="Hủy" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnXacNhan" layoutX="220.0" layoutY="522.0" mnemonicParsing="false" onAction="#actXacNhan" prefHeight="50.0" prefWidth="140.0" text="Xác Nhận" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <DatePicker fx:id="dateTuNgay" layoutX="198.0" layoutY="168.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="220.0" />
+      <DatePicker fx:id="dateDenNgay" layoutX="198.0" layoutY="231.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="270.0" />
+      <Label alignment="CENTER" layoutX="141.0" layoutY="65.0" prefHeight="80.0" prefWidth="800.0" text="Đăng Ký Tạm Vắng" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

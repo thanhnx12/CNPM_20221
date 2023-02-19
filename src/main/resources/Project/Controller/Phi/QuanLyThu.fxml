@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="766.0" prefWidth="1051.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller.Phi.QuanLyThuController">
+   <children>
+      <TableView fx:id="tableView" layoutX="120.0" layoutY="109.0" prefHeight="522.0" prefWidth="796.0">
+        <columns>
+          <TableColumn fx:id="maHoKhau" prefWidth="241.0" text="Mã hộ khẩu" />
+          <TableColumn fx:id="chuHo" prefWidth="310.0" text="Chủ hộ" />
+            <TableColumn fx:id="nop" prefWidth="244.0" text="Số tiền/Đã nộp " />
+            <TableColumn fx:id="diaChi" prefWidth="208.0" text="Địa chỉ " />
+        </columns>
+      </TableView>
+      <Button fx:id="btnThemNguoiNop" layoutX="551.0" layoutY="672.0" mnemonicParsing="false" onAction="#actThemNguoiNop" prefHeight="39.0" prefWidth="180.0" text="Thêm người nộp">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="btnXoa" layoutX="763.0" layoutY="672.0" mnemonicParsing="false" onAction="#actXoa" prefHeight="39.0" prefWidth="153.0" text="Xoá">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <MenuButton fx:id="menuLoaiPhi" contentDisplay="CENTER" layoutX="120.0" layoutY="47.0" mnemonicParsing="false" onAction="#actLoaiPhi" prefHeight="39.0" prefWidth="239.0" text="Loại phí">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </MenuButton>
+      <Button fx:id="btnTaoPhiMoi" layoutX="120.0" layoutY="672.0" mnemonicParsing="false" onAction="#actTaoPhiMoi" prefHeight="39.0" prefWidth="180.0" text="Tạo phí mới">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextField fx:id="txtTimKiem" layoutX="522.0" layoutY="47.0" onAction="#actTimKiem" prefHeight="39.0" prefWidth="394.0" promptText="Tìm kiếm ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
