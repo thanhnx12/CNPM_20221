@@ -60,8 +60,7 @@ public class HoKhauController implements Initializable {
 
     @FXML
     private Button btnTachHoKhau;
-    @FXML
-    private Button btnTimKiem;
+
     @FXML
     private TextField inpTimKiem;
 
