@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: quan_ly_so_ho_khau
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `phi` (
 
 LOCK TABLES `phi` WRITE;
 /*!40000 ALTER TABLE `phi` DISABLE KEYS */;
-INSERT INTO `phi` VALUES (1,'hahaha',1,0,1,'2022-05-05 00:00:00'),(2,'hehehe',0,6000,0,'2022-06-06 00:00:00');
+INSERT INTO `phi` VALUES (4,'Phí Nước Sạch',0,50000,1,'2023-02-15 00:00:00'),(5,'Quyên Góp Khuyến Học',1,0,1,'2023-02-16 00:00:00'),(6,'Cơ sở vật chất',0,345687,1,'2023-02-16 00:00:00'),(7,'phi nuoc',0,5000,1,'2023-02-15 00:00:00');
 /*!40000 ALTER TABLE `phi` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26 20:54:50
+-- Dump completed on 2023-02-19 20:46:44

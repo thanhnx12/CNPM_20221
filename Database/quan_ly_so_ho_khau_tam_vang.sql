@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: quan_ly_so_ho_khau
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,7 +41,7 @@ CREATE TABLE `tam_vang` (
 
 LOCK TABLES `tam_vang` WRITE;
 /*!40000 ALTER TABLE `tam_vang` DISABLE KEYS */;
-INSERT INTO `tam_vang` VALUES (1,3,'awefa','2022-11-09','2022-11-18','awefawef'),(2,1,'123123123','2022-11-01','2022-11-17','awefawefaf');
+INSERT INTO `tam_vang` VALUES (1,3,'awefa','2022-11-09','2022-11-18','awefawef'),(2,1,'123123123','2022-11-01','2022-11-17','awefawefaf'),(3,5,'123','2023-02-01','2023-02-16','123123123123'),(4,11,'435745368','2023-02-09','2023-02-16','đi thi đại học');
 /*!40000 ALTER TABLE `tam_vang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26 20:54:50
+-- Dump completed on 2023-02-19 20:46:43

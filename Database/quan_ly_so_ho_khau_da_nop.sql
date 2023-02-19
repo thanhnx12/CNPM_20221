@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: quan_ly_so_ho_khau
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,11 +28,7 @@ CREATE TABLE `da_nop` (
   `idHoKhau` int NOT NULL,
   `soTien` double NOT NULL,
   `ngayNop` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idPhi` (`idPhi`,`idHoKhau`),
-  KEY `idHoKhau` (`idHoKhau`),
-  CONSTRAINT `da_nop_ibfk_1` FOREIGN KEY (`idHoKhau`) REFERENCES `ho_khau` (`id`),
-  CONSTRAINT `da_nop_ibfk_2` FOREIGN KEY (`idPhi`) REFERENCES `phi` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +38,7 @@ CREATE TABLE `da_nop` (
 
 LOCK TABLES `da_nop` WRITE;
 /*!40000 ALTER TABLE `da_nop` DISABLE KEYS */;
-INSERT INTO `da_nop` VALUES (1,1,0,1000,'2022-05-05 00:00:00'),(2,2,0,6000,'2022-11-26 00:00:00'),(3,2,0,6000,'2022-11-26 00:00:00'),(4,2,0,6000,'2022-11-26 00:00:00');
+INSERT INTO `da_nop` VALUES (1,3,0,5000,'2023-02-14 00:00:00'),(2,1,2,50000,'2023-02-14 00:00:00'),(3,7,1,5000,'2023-02-14 00:00:00');
 /*!40000 ALTER TABLE `da_nop` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26 20:54:50
+-- Dump completed on 2023-02-19 20:46:43

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: quan_ly_so_ho_khau
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -43,7 +43,7 @@ CREATE TABLE `tam_tru` (
 
 LOCK TABLES `tam_tru` WRITE;
 /*!40000 ALTER TABLE `tam_tru` DISABLE KEYS */;
-INSERT INTO `tam_tru` VALUES (1,2,'1111','ababab','2022-11-09','2022-11-10','ádfsdf','gà'),(2,4,'123123','asdfasdf','2022-11-01','2022-11-17','hahaha','Hai');
+INSERT INTO `tam_tru` VALUES (1,2,'1111','ababab','2022-11-09','2022-11-10','ádfsdf','gà'),(2,4,'123123','asdfasdf','2022-11-01','2022-11-17','hahaha','Hai'),(3,6,'123','123','2023-02-02','2023-03-03','123','123'),(4,15,'76867','9387463','2023-02-09','2023-03-03','đi chơi','sdffgadsfg'),(5,16,'ạowiejfgaweg','3457475578','2023-02-16','2023-03-04','dsgasegawe','9846709812'),(6,17,'394870123','hahaha','2023-02-02','2023-02-25','asdfsdf','Nguyen Van E');
 /*!40000 ALTER TABLE `tam_tru` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26 20:54:50
+-- Dump completed on 2023-02-19 20:46:43
